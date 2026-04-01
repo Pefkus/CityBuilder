@@ -8175,6 +8175,7 @@ MonoBehaviour:
   - {fileID: 4296328459287240595, guid: 669309f57fa119849bd73357746fc2d1, type: 3}
   - {fileID: 8964461917096180653, guid: 54ce113bb85d9134a8946da274e8e21f, type: 3}
   - {fileID: 3717724002635532007, guid: 2c988697117bc8c40b3f809272def5d6, type: 3}
+  - {fileID: 1680948049756902282, guid: f6c36d073fb06fe42b15094fceb0ae0c, type: 3}
   amountOfItemsInInventory: 
 --- !u!1 &1031921228
 GameObject:
