@@ -40,9 +40,9 @@ public class MouseController : MonoBehaviour
         Vector3Int cellPosition = myGrid.WorldToCell(rawWorldPosition);
         cursorMarker.position = myGrid.GetCellCenterWorld(cellPosition);
 
-        if(Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            InventoryManager.Instance.ChangeValueOfItemInInventory("wood", 1);
-        }
+        
     }
+
+    
+
 }

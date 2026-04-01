@@ -1,36 +1,48 @@
 using UnityEngine;
-
+using System.Collections.Generic;
 public class InventoryManager : MonoBehaviour
 {
+    // Singleton, ¿eby mieæ ³atwy dostêp do ekwipunku z ka¿dego miejsca
     public static InventoryManager Instance { get; private set; }
 
-    public int wood = 0;
-    public int stone = 0;
-    public int berries = 0;
+    // Lista nazw przedmiotów w ekwipunku
+    public List<GameObject> itemsInInventory = new List<GameObject>();
+
+    // Lista iloœci ka¿dego przedmiotu w ekwipunku, indeks odpowiada indeksowi w itemsInInventory
+    public List<int> amountOfItemsInInventory = new List<int>();
 
     private void Awake()
     {
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
-
-    public void ChangeValueOfItemInInventory(string name, int amount)
+    private void Start()
     {
-        name = name.ToLower();
-        switch (name)
+        // Inicjalizacja iloœci przedmiotów w ekwipunku na 0        UwAGA: za³o¿enie, ¿e itemsInInventory jest ju¿ wype³nione nazwami przedmiotów, które mog¹ byæ w ekwipunku
+        foreach (GameObject item in itemsInInventory)
         {
-            case "wood":
-                wood += amount;
-                break;
-            case "stone":
-                stone += amount;
-                break;
-            case "berries":
-                berries += amount;
-                break;
-            default:
-                Debug.LogWarning("Nieznany przedmiot: " + name);
-                break;
+            amountOfItemsInInventory.Add(0);
         }
     }
+    // Funkcja do pobierania iloœci danego przedmiotu w ekwipunku
+    public int GetValueOfItemInInventory(GameObject name)
+    {
+        if (!itemsInInventory.Contains(name))
+        {
+            Debug.LogError("Nieistnieje item o nazwie: " + name);
+            return 0;
+        }
+        return amountOfItemsInInventory[itemsInInventory.IndexOf(name)];
+    }
+    // Funkcja do zmiany iloœci danego przedmiotu w ekwipunku (dodawanie lub odejmowanie)
+    public void ChangeValueOfItemInInventory(GameObject name, int amount)
+    {
+        if (!itemsInInventory.Contains(name))
+        {
+            Debug.LogError("Nieistnieje item o nazwie: " +name );
+            return;
+        }
+        amountOfItemsInInventory[itemsInInventory.IndexOf(name)] += amount;
+    }
+    
 }
