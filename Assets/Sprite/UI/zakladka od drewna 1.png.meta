@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: a6179a02cabb542419e097de4d05db20
+guid: 7afcad36fa32d934c84881b5048f9be1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1777876207920635037
-    second: wiatrak2_0
-  - first:
-      213: 5177068726830494407
-    second: wiatrak2_1
-  - first:
-      213: 6822450632711368690
-    second: wiatrak2_2
-  - first:
-      213: -8058602040053469490
-    second: wiatrak2_3
+      213: 5672951972160758988
+    second: zakladka od drewna 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,13 +46,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.5082195, y: 0.56408}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
-  spriteBorder: {x: 9, y: 13, z: 9, w: 5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -109,89 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wiatrak2_0
+      name: zakladka od drewna 1_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 36
-        width: 24
-        height: 24
+        x: 1
+        y: 0
+        width: 31
+        height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 0, z: 1, w: 1}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 363a54c2207b357e0800000000000000
-      internalID: -1777876207920635037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wiatrak2_1
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 12
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c2f388e394a8d740800000000000000
-      internalID: 5177068726830494407
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wiatrak2_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 36
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ff666c14b63eae50800000000000000
-      internalID: 6822450632711368690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wiatrak2_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 12
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eceef5014281a2090800000000000000
-      internalID: -8058602040053469490
+      spriteID: cc46e7813cf5abe40800000000000000
+      internalID: 5672951972160758988
       vertices: []
       indices: 
       edges: []
@@ -200,8 +125,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 552b92c082eb347448bbbf6eb95e0349
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      wiatrak2_0: -1777876207920635037
-      wiatrak2_1: 5177068726830494407
-      wiatrak2_2: 6822450632711368690
-      wiatrak2_3: -8058602040053469490
+      zakladka od drewna 1_0: 5672951972160758988
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
