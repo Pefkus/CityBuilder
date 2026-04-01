@@ -39,5 +39,10 @@ public class MouseController : MonoBehaviour
         // Grid automatycznie przelicza to na kordynaty komórki (np. x:1, y:2), a potem zwraca idealny œrodek tej komórki w œwiecie
         Vector3Int cellPosition = myGrid.WorldToCell(rawWorldPosition);
         cursorMarker.position = myGrid.GetCellCenterWorld(cellPosition);
+
+        if(Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            InventoryManager.Instance.ChangeValueOfItemInInventory("wood", 1);
+        }
     }
 }
