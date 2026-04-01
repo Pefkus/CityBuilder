@@ -21,7 +21,7 @@ public class Click : MonoBehaviour
     }
     void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (Mouse.current.leftButton.wasPressedThisFrame && Collision != null)
         {
             Collision.gameObject.GetComponent<Bulding>().ProdusingItem(0);
         }
