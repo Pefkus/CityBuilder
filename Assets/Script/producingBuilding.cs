@@ -2,25 +2,39 @@ using UnityEngine;
 
 public class Bulding : MonoBehaviour
 {
+    public int AdaptiveBoost = 0;
+    public bool isProdusingBuilding;
     public GameObject ProdusingItemName;
     public GameObject ItemNeeded;
     public int Cost;
     public int amoutOfItemProdusing;
+    public GameObject PopUp;
     public void ProdusingItem(int boost)
     {
-        if (ItemNeeded.name != "")
+        if(isProdusingBuilding)
         {
-            if (InventoryManager.Instance.GetValueOfItemInInventory(ItemNeeded) >= Cost)
+            if (ItemNeeded != null)
             {
-                InventoryManager.Instance.ChangeValueOfItemInInventory(ItemNeeded, -Cost);
-                InventoryManager.Instance.ChangeValueOfItemInInventory(ProdusingItemName, amoutOfItemProdusing + boost);
+                if (InventoryManager.Instance.GetValueOfItemInInventory(ItemNeeded) >= Cost)
+                {
+                    InventoryManager.Instance.ChangeValueOfItemInInventory(ItemNeeded, -Cost);
+                    InventoryManager.Instance.ChangeValueOfItemInInventory(ProdusingItemName, amoutOfItemProdusing + boost + AdaptiveBoost);
+                    CreatePopItem();
+                }
             }
             else
             {
-                Debug.Log("Nie masz wystarczaj¹co " + ItemNeeded);
+                InventoryManager.Instance.ChangeValueOfItemInInventory(ProdusingItemName, amoutOfItemProdusing + boost + AdaptiveBoost);
+                CreatePopItem();
             }
         }
-        else
-            InventoryManager.Instance.ChangeValueOfItemInInventory(ProdusingItemName, amoutOfItemProdusing + boost);
+    }
+    void CreatePopItem()
+    {
+        if (PopUp != null)
+        {
+            PopUp.GetComponent<ParticleSystem>().textureSheetAnimation.SetSprite(0, ProdusingItemName.GetComponent<SpriteRenderer>().sprite);
+            Instantiate(PopUp, transform.position, Quaternion.identity, this.transform);
+        }
     }
 }

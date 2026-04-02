@@ -23,7 +23,10 @@ public class Click : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame && Collision != null)
         {
-            Collision.gameObject.GetComponent<Bulding>().ProdusingItem(0);
+            if(Collision.gameObject.GetComponent<Bulding>().isProdusingBuilding)
+                Collision.gameObject.GetComponent<Bulding>().ProdusingItem(0);
+           
+            Collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("Click");
         }
     }
 }

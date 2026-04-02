@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 887a54bfeb9864a4ea2f68a1d4869f72, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2d974572940e2b4a8f3c184308c0c5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: -7496202678886316444}
   - component: {fileID: 3774714470394484737}
   m_Layer: 0
-  m_Name: tartak
+  m_Name: DomRybaka
   m_TagString: Bulding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,9 +162,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   isProdusingBuilding: 1
-  ProdusingItemName: {fileID: 1542653592078830858, guid: 85ce90619c83c3945827bafec97ba5bf, type: 3}
-  ItemNeeded: {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
-  Cost: 1
+  ProdusingItemName: {fileID: 4296328459287240595, guid: 669309f57fa119849bd73357746fc2d1, type: 3}
+  ItemNeeded: {fileID: 0}
+  Cost: 0
   amoutOfItemProdusing: 1
   PopUp: {fileID: 1876300791191131365, guid: 83db28035b1396c4a8af9cdbdd047cd3, type: 3}
 --- !u!61 &-7496202678886316444
