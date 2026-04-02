@@ -15,9 +15,9 @@ public class Bulding : MonoBehaviour
         {
             if (ItemNeeded != null)
             {
-                if (InventoryManager.Instance.GetValueOfItemInInventory(ItemNeeded) >= Cost)
+                if (InventoryManager.Instance.GetValueOfItemInInventory(ItemNeeded) >= Cost + boost + AdaptiveBoost)
                 {
-                    InventoryManager.Instance.ChangeValueOfItemInInventory(ItemNeeded, -Cost);
+                    InventoryManager.Instance.ChangeValueOfItemInInventory(ItemNeeded, -Cost - boost - AdaptiveBoost);
                     InventoryManager.Instance.ChangeValueOfItemInInventory(ProdusingItemName, amoutOfItemProdusing + boost + AdaptiveBoost);
                     CreatePopItem();
                 }
