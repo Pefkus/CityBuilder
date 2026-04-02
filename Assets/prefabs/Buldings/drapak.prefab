@@ -126,8 +126,8 @@ GameObject:
   - component: {fileID: -7496202678886316444}
   - component: {fileID: 3774714470394484737}
   - component: {fileID: 343062420382005509}
-  m_Layer: 0
-  m_Name: Drapak
+  m_Layer: 6
+  m_Name: drapak
   m_TagString: Boosting Bulding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

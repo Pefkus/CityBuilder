@@ -6,15 +6,16 @@ TagManager:
   tags:
   - Bulding
   - Boosting Bulding
+  - Mouse
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Stone
   - Water
   - UI
-  - 
-  - 
+  - Grass
+  - fog
   - 
   - 
   - 

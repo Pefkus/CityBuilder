@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: -9024393335062933128}
   - component: {fileID: -7496202678886316444}
   - component: {fileID: 3774714470394484737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tartak
   m_TagString: Bulding
   m_Icon: {fileID: 0}
@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f136fcf14f372498b68ed122f39a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  AdaptiveBoost: 0
   isProdusingBuilding: 1
   ProdusingItemName: {fileID: 1542653592078830858, guid: 85ce90619c83c3945827bafec97ba5bf, type: 3}
   ItemNeeded: {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}

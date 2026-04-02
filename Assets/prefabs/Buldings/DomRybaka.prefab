@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: -9024393335062933128}
   - component: {fileID: -7496202678886316444}
   - component: {fileID: 3774714470394484737}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: DomRybaka
   m_TagString: Bulding
   m_Icon: {fileID: 0}
@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f136fcf14f372498b68ed122f39a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  AdaptiveBoost: 0
   isProdusingBuilding: 1
   ProdusingItemName: {fileID: 4296328459287240595, guid: 669309f57fa119849bd73357746fc2d1, type: 3}
   ItemNeeded: {fileID: 0}
