@@ -7,6 +7,7 @@ TagManager:
   - Bulding
   - Boosting Bulding
   - Mouse
+  - tarrain
   layers:
   - Default
   - TransparentFX

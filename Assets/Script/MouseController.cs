@@ -1,14 +1,17 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 public class MouseController : MonoBehaviour
 {
     Camera mainCamera;
-    private GameObject Collision;
+    public GameObject Collision;
     public GameObject PlacingTheBuilding;
     public bool CreatingBuilding = false;
 
+    public GameObject particlesystem;
     public Transform cursorMarker;
+    public Vector3Int cellPosition;
     public GameObject cursorMarkerSpriteRenderer;
     public Grid myGrid;
     public float Speed = 1.5f;
@@ -44,7 +47,7 @@ public class MouseController : MonoBehaviour
         Vector3 rawWorldPosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         // Grid automatycznie przelicza to na kordynaty komórki (np. x:1, y:2), a potem zwraca idealny œrodek tej komórki w œwiecie
-        Vector3Int cellPosition = myGrid.WorldToCell(rawWorldPosition);
+        cellPosition = myGrid.WorldToCell(rawWorldPosition);
         cursorMarker.position = myGrid.GetCellCenterWorld(cellPosition);
 
         timer += Time.deltaTime * Speed;
@@ -59,9 +62,11 @@ public class MouseController : MonoBehaviour
                 {
                     if (Collision != null)
                     {
-                        if (Collision.gameObject.GetComponent<Bulding>().isProdusingBuilding)
-                            Collision.gameObject.GetComponent<Bulding>().ProdusingItem(0);
-
+                        if (Collision.gameObject.CompareTag("Bulding"))
+                        {
+                            if (Collision.gameObject.GetComponent<Bulding>().isProdusingBuilding)
+                                Collision.gameObject.GetComponent<Bulding>().ProdusingItem(0);
+                        }
                         Collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("Click");
                     }
                     timer = 0f; // Resetujemy licznik
@@ -69,40 +74,23 @@ public class MouseController : MonoBehaviour
             }
             else
             {
-                
-                    // Jeœli tworzymy budynek i klikniemy, to przypinamy go do siatki i koñczymy tworzenie
-                    if (IsPlaneGood())
-                    {
-                        PlacingTheBuilding.transform.SetParent(myGrid.transform);
-                        CreatingBuilding = false;
-                        PlacingTheBuilding = null;
-                    }
+                // Jeœli tworzymy budynek i klikniemy, to przypinamy go do siatki i koñczymy tworzenie
+                if (CreatorBuildingsMenager.Instance.IsTileGood())
+                {
+                    PlacingTheBuilding.transform.SetParent(myGrid.transform);
+                    Instantiate(particlesystem, PlacingTheBuilding.transform.position, Quaternion.identity, PlacingTheBuilding.transform);
+                    CreatingBuilding = false;
+                    Collision = PlacingTheBuilding;
+                    PlacingTheBuilding = null;
+                    
+                }
             }
                 
             
         }
-        IsPlaneGood();
     }
 
-    bool IsPlaneGood()
-    {
-        // Funkcja do sprawdzania, czy mo¿na postawiæ budynek na danej pozycji (czy nie ma tam innego budynku)
-        if (CreatingBuilding)
-        {
-            if (Collision != null)
-            {
-                cursorMarkerSpriteRenderer.GetComponent<SpriteRenderer>().color = Color.red;
-                return false;
-            }
-            else
-            {
-                cursorMarkerSpriteRenderer.GetComponent<SpriteRenderer>().color = Color.green;
-                return true;
-            }
-        }
-        cursorMarkerSpriteRenderer.GetComponent<SpriteRenderer>().color = Color.white;
-        return false;
-    }
+    
 
 
     // Funkcje do wykrywania kolizji z budynkami, ¿eby wiedzieæ, w co klikamy i gdzie mo¿emy postawiæ budynek
