@@ -26866,7 +26866,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2091178167}
         m_TargetAssemblyTypeName: CreatorBuildingsMenager, Assembly-CSharp
-        m_MethodName: SelectBulding
+        m_MethodName: CheckTheBuilding
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 6164748612352016119, guid: 054cba5f72f47b24b9fa9d27c863d2a3, type: 3}

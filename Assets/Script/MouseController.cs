@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 public class MouseController : MonoBehaviour
 {
     Camera mainCamera;
@@ -82,7 +81,7 @@ public class MouseController : MonoBehaviour
                     CreatingBuilding = false;
                     Collision = PlacingTheBuilding;
                     PlacingTheBuilding = null;
-                    
+                    cursorMarkerSpriteRenderer.GetComponent<SpriteRenderer>().color = Color.white;
                 }
             }
                 
@@ -109,7 +108,7 @@ public class MouseController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bulding") || collision.gameObject.CompareTag("Boosting Bulding"))
         {
-            Collision = null;
+                Collision = null;
         }
     }
 

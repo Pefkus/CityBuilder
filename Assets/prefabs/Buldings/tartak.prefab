@@ -123,6 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8245451682209789479}
+  - component: {fileID: -6362745582384328958}
   - component: {fileID: -9024393335062933128}
   - component: {fileID: -7496202678886316444}
   - component: {fileID: 3774714470394484737}
@@ -149,6 +150,21 @@ Transform:
   - {fileID: 1091336848729257646}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6362745582384328958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164748612352016119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e006d2ea7592143a4bf75cc7ce5482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  CostsOfResources: 32000000
+  WhatResourcesNeedToBuild:
+  - {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
   m_ObjectHideFlags: 0
