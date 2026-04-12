@@ -42,12 +42,35 @@ public class MouseController : MonoBehaviour
                 cursorMarkerSpriteRenderer.gameObject.SetActive(true);
             }
         }
-
         Vector3 rawWorldPosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         // Grid automatycznie przelicza to na kordynaty komórki (np. x:1, y:2), a potem zwraca idealny œrodek tej komórki w œwiecie
         cellPosition = myGrid.WorldToCell(rawWorldPosition);
-        cursorMarker.position = myGrid.GetCellCenterWorld(cellPosition);
+        if(CreatingBuilding)
+        {
+            if(PlacingTheBuilding != null)
+            {
+                if (PlacingTheBuilding.GetComponent<TypeOfBuilding>().BuildingSize > 1)
+                {
+                    cursorMarkerSpriteRenderer.transform.localScale = new Vector3(2f, 2f, 1f);
+                    cursorMarker.GetComponent<BoxCollider2D>().size = new Vector2(1.75f, 1.75f);
+                    cursorMarker.position = myGrid.GetCellCenterWorld(cellPosition) + new Vector3(0.5f, 0.5f, 0);
+                }
+                else
+                {
+                    cursorMarkerSpriteRenderer.transform.localScale = new Vector3(1f, 1f, 1f);
+                    cursorMarker.GetComponent<BoxCollider2D>().size = new Vector2(0.75f, 0.75f);
+                    cursorMarker.position = myGrid.GetCellCenterWorld(cellPosition);
+                }
+            } 
+        }
+        else
+        {
+            cursorMarkerSpriteRenderer.transform.localScale = new Vector3(1f, 1f, 1f);
+            cursorMarker.GetComponent<BoxCollider2D>().size = new Vector2(0.75f, 0.75f);
+            cursorMarker.position = myGrid.GetCellCenterWorld(cellPosition);
+        }
+        
 
         timer += Time.deltaTime * Speed;
 
