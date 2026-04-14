@@ -40,27 +40,29 @@ public class InventoryManager : MonoBehaviour
     // Funkcja do pobierania iloœci danego przedmiotu w ekwipunku
     public int GetValueOfItemInInventory(GameObject name)
     {
-        if (!itemsInInventory.Contains(name))
+        GameObject item = itemsInInventory.Find(x => x.name == name.name);
+        if (item == null)
         {
             Debug.LogError("Nieistnieje item o nazwie: " + name);
             return 0;
         }
-        return amountOfItemsInInventory[itemsInInventory.IndexOf(name)];
+        return amountOfItemsInInventory[itemsInInventory.IndexOf(item)];
     }
     // Funkcja do zmiany iloœci danego przedmiotu w ekwipunku (dodawanie lub odejmowanie)
     public void ChangeValueOfItemInInventory(GameObject name, int amount)
     {
-        if (!itemsInInventory.Contains(name))
+        GameObject item = itemsInInventory.Find(x => x.name == name.name);
+        if (item == null)
         {
             Debug.LogError("Nieistnieje item o nazwie: " +name );
             return;
         }
-        amountOfItemsInInventory[itemsInInventory.IndexOf(name)] += amount;
-        if(amountOfItemsInInventory[itemsInInventory.IndexOf(name)] < 0)
+        amountOfItemsInInventory[itemsInInventory.IndexOf(item)] += amount;
+        if(amountOfItemsInInventory[itemsInInventory.IndexOf(item)] < 0)
         {
-            amountOfItemsInInventory[itemsInInventory.IndexOf(name)] = 0;
+            amountOfItemsInInventory[itemsInInventory.IndexOf(item)] = 0;
         }
-        ItHasAlreadyASlot(name);
+        ItHasAlreadyASlot(item);
     }
 
     // Funkcja do sprawdzania, czy przedmiot ju¿ ma przypisany slot w ekwipunku, jeœli tak to aktualizuje jego iloœæ, jeœli nie to szuka pustego slotu
@@ -68,7 +70,7 @@ public class InventoryManager : MonoBehaviour
     {
         foreach (GameObject slot in itemslots)
         {
-            if (slot.name == item.name + " Slot")
+            if (slot.name == item.name)
             {
                 ChangingTxtOfAmount(item, slot);
                 return;
@@ -84,7 +86,7 @@ public class InventoryManager : MonoBehaviour
             slot.GetComponent<Image>().enabled = true;
             slot.GetComponentInChildren<TextMeshProUGUI>().enabled = true;
             ChangingTxtOfAmount(item, slot);
-            slot.name = item.name + " Slot";
+            slot.name = item.name;
             slot.GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
         }
     }

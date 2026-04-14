@@ -3,16 +3,13 @@ using UnityEngine.Tilemaps;
 public class CreatorBuildingsMenager : MonoBehaviour
 {
     public static CreatorBuildingsMenager Instance { get; private set; }
-    GameObject mouseController;
-    MouseController MouseScrpit;
+    public MouseController MouseScrpit;
     public Tilemap Tilemapy;
     public LayerMask BuldingLayerMask;
     public bool IsThisTileMatching;
     private void Awake()
     {
         Instance = this;
-        mouseController = GameObject.FindWithTag("Mouse");
-        MouseScrpit = mouseController.GetComponent<MouseController>();
     }
     // Funkcja do sprawdzania, czy gracz ma wystarczaj¹co zasobów, ¿eby postawiæ dany budynek, który jest przekazywany jako argument, i jeœli tak, to wywo³anie funkcji do tworzenia budynku
     public void CheckTheBuilding(GameObject Building)
@@ -47,7 +44,7 @@ public class CreatorBuildingsMenager : MonoBehaviour
     // Funkcja do tworzenia budynku, który jest przekazywany jako argument, na pozycji kursora i przypisanie go do kolizji w MouseControllerze, ¿eby mo¿na by³o w niego klikaæ
     private void CreateTheBulding(GameObject name)
     {
-        GameObject building = Instantiate(name, MouseScrpit.cursorMarker.position, Quaternion.identity, mouseController.transform);
+        GameObject building = Instantiate(name, MouseScrpit.cursorMarker.position, Quaternion.identity, MouseScrpit.transform);
         MouseScrpit.CreatingBuilding = true;
         MouseScrpit.PlacingTheBuilding = building;
         BuldingLayerMask.value = 1 << building.layer;

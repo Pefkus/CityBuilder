@@ -8,6 +8,8 @@ TagManager:
   - Boosting Bulding
   - Mouse
   - tarrain
+  - UIComponent
+  - UIComponentBulding
   layers:
   - Default
   - TransparentFX

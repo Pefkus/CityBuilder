@@ -16,7 +16,8 @@ public class MouseController : MonoBehaviour
     public float Speed = 1.5f;
     private float timer = 0f;
     private float baseInterval = 1f; // Bazowa sekunda
-
+    [Header("CursorUi")]
+    public GameObject CursorUi;
     void Start()
     {
         mainCamera = Camera.main;
@@ -29,6 +30,7 @@ public class MouseController : MonoBehaviour
             if (cursorMarkerSpriteRenderer.gameObject.activeSelf)
             {
                 cursorMarkerSpriteRenderer.gameObject.SetActive(false);
+                CursorUi.SetActive(true);
             }
 
             // Przerywamy dzia³anie funkcji, ¿eby nie przeliczaæ i nie ruszaæ kursora pod UI
@@ -40,6 +42,7 @@ public class MouseController : MonoBehaviour
             if (!cursorMarkerSpriteRenderer.gameObject.activeSelf)
             {
                 cursorMarkerSpriteRenderer.gameObject.SetActive(true);
+                CursorUi.SetActive(false);
             }
         }
         Vector3 rawWorldPosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
