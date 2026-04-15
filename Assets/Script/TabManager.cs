@@ -31,9 +31,9 @@ public class TabManager : MonoBehaviour
         if (gorneZakladki != null)
         {
             if (tabIndex == 1) 
-                gorneZakladki.interactable = false;
+                gorneZakladki.gameObject.SetActive(false);
             else 
-                gorneZakladki.interactable = true;
+                gorneZakladki.gameObject.SetActive(true);
         }
 
         for (int i = 0; i < tabPages.Length; i++)
