@@ -89,8 +89,12 @@ public class MouseController : MonoBehaviour
                     {
                         if (Collision.gameObject.CompareTag("Bulding"))
                         {
-                            if (Collision.gameObject.GetComponent<Bulding>().isProdusingBuilding)
-                                Collision.gameObject.GetComponent<Bulding>().ProdusingItem(0);
+                            if(Collision.gameObject.GetComponent<Bulding>() != null)
+                            {
+                                if (Collision.gameObject.GetComponent<Bulding>().isProdusingBuilding)
+                                    Collision.gameObject.GetComponent<Bulding>().ProdusingItem(0);
+                            }
+                            
                         }
                         Collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("Click");
                     }

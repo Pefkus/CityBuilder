@@ -24,6 +24,10 @@ public class BoostingBuilding : MonoBehaviour
         {
             if (hitCollider.CompareTag("Bulding"))
             {
+                if(hitCollider.gameObject.GetComponent<Bulding>() == null)
+                {
+                    continue;
+                }
                 GameObject building = hitCollider.gameObject;
                 currentlyDetected.Add(building);
 
