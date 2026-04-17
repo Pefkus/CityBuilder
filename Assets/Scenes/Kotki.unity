@@ -39022,11 +39022,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 739726b51c6c17341b3ef693046997b2, type: 3}
---- !u!1 &1777946090 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4884808520668008891, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
-  m_PrefabInstance: {fileID: 2091178165}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1781161203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2782852295605518720, guid: 739726b51c6c17341b3ef693046997b2, type: 3}
@@ -44281,11 +44276,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 449209371903410129, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.09663
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 449209371903410129, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.13391
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 449209371903410129, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -44319,10 +44314,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2545803791491282135, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
-      propertyPath: itemslots.Array.size
-      value: 16
-      objectReference: {fileID: 0}
+    - target: {fileID: 1247160328510296996, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: FoodSlider
+      value: 
+      objectReference: {fileID: 444429174}
     - target: {fileID: 2545803791491282135, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: 'itemslots.Array.data[0]'
       value: 
@@ -44388,45 +44383,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1231261982}
     - target: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
-      propertyPath: mapa
-      value: 
-      objectReference: {fileID: 1220443697}
-    - target: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: Tilemapy
       value: 
       objectReference: {fileID: 1220443697}
     - target: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
-      propertyPath: "mapamg\u0142y"
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: MouseScrpit
       value: 
       objectReference: {fileID: 1716072066}
-    - target: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
-      propertyPath: particlesystem
-      value: 
-      objectReference: {fileID: 1130369019923078984, guid: 379649b0d1758a0498ab5fc0afc8dd5e, type: 3}
-    - target: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
-      propertyPath: mouseController
-      value: 
-      objectReference: {fileID: 1716072061}
-    - target: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
-      propertyPath: BuldingLayerMask.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
-      propertyPath: wszystkieTilemapy.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
-      propertyPath: 'wszystkieTilemapy.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1220443697}
-    - target: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
-      propertyPath: 'wszystkieTilemapy.Array.data[1]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4884808520668008891, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: m_Name
       value: GameController
@@ -44434,62 +44397,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4884808520668008891, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2091178170}
-    - targetCorrespondingSourceObject: {fileID: 4884808520668008891, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2091178173}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
 --- !u!114 &2091178166 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
   m_PrefabInstance: {fileID: 2091178165}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777946090}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6448efeca17fef428a6d75110d3cd6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &2091178170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777946090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f0d2dfaa9c71744badb6073918c663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  TypesOfBuildings:
-  - {fileID: 6164748612352016119, guid: 9cb3b8c6cb298ba469b5fada5b7e902c, type: 3}
-  - {fileID: 6164748612352016119, guid: e2f9366e177eb1a48a6a1bd33036966b, type: 3}
-  - {fileID: 6164748612352016119, guid: e710b6a0b0d64fc48bb1adaf8c05f571, type: 3}
-  - {fileID: 6164748612352016119, guid: 515870dde22f8544098aa3c647fd9c5c, type: 3}
-  - {fileID: 6164748612352016119, guid: 5b0dad09e8b695a4f90f1731320ea82c, type: 3}
-  - {fileID: 6164748612352016119, guid: 58ee26847af34784ca57ea18e2913f1b, type: 3}
-  - {fileID: 6164748612352016119, guid: 7e028c711fa518e44874755b6cdbde23, type: 3}
-  - {fileID: 6164748612352016119, guid: 054cba5f72f47b24b9fa9d27c863d2a3, type: 3}
-  - {fileID: 6164748612352016119, guid: f3b63224d5398b246bcf9963728ce742, type: 3}
---- !u!114 &2091178173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777946090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5c59c64065353249943e3db71a25407, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  MaxFoodAmount: 150
-  MaxPeopleStorage: 150
-  FoodSlider: {fileID: 444429174}
 --- !u!1 &2098813608
 GameObject:
   m_ObjectHideFlags: 0

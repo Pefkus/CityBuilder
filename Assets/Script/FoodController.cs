@@ -25,9 +25,17 @@ public class FoodController : MonoBehaviour
         MaxFoodAmount += amount;
         FoodSlider.maxValue = MaxFoodAmount;
     }
-    public void ChangeFoodAmount(float amount)
+    public void ChangeFoodAmount(float amount, GameObject food)
     {
-        FoodSlider.value += amount;
+        if (food != null)
+        {
+            Food foodScript = food.GetComponent<Food>();
+            if (foodScript != null)
+            {
+                amount *= foodScript.KgPerUnit;
+                FoodSlider.value += amount;
+            }
+        }
     }
     public float GetCurrentFoodAmount()
     {
@@ -62,7 +70,7 @@ public class FoodController : MonoBehaviour
                 if (food.CompareTag("Food") && InventoryManager.Instance.GetValueOfItemInInventory(food) > 0)
                 {
                     InventoryManager.Instance.ChangeValueOfItemInInventory(food, -amount);
-                    ChangeFoodAmount(-amount);
+                    ChangeFoodAmount(-amount, food);
                     break;
                 }
             }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 556502295317060710}
   - component: {fileID: 2346913618079558572}
+  - component: {fileID: -3709478223000386721}
   m_Layer: 0
   m_Name: wedzona_ryba
   m_TagString: Food
@@ -91,3 +92,16 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &-3709478223000386721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8964461917096180653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115c086e8a7f9e242b74d8eebb166c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  KgPerUnit: 3.5

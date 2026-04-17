@@ -55,7 +55,7 @@ public class Bulding : MonoBehaviour
         {
             if(FoodController.Instance.GetCurrentFoodAmount() + amoutOfItemProdusing + boost + AdaptiveBoost <= FoodController.Instance.MaxFoodAmount)
             {
-                FoodController.Instance.ChangeFoodAmount(amoutOfItemProdusing + boost + AdaptiveBoost);
+                FoodController.Instance.ChangeFoodAmount(amoutOfItemProdusing + boost + AdaptiveBoost, ProdusingItemName);
                 InventoryManager.Instance.ChangeValueOfItemInInventory(ProdusingItemName, amoutOfItemProdusing + boost + AdaptiveBoost);
                 CreatePopItem();
             }

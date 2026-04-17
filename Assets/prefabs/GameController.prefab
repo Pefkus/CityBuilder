@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 449209371903410129}
   - component: {fileID: 2545803791491282135}
   - component: {fileID: 4179620383684146366}
+  - component: {fileID: 5738584651545625841}
+  - component: {fileID: 1247160328510296996}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4884808520668008891}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -25.09663, y: -0.13391, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,6 +47,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a822ed9fcc28d54183e6c2d41438748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
+  itemslots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   itemsInInventory:
   - {fileID: 2382671024165135040, guid: 752bad810d480334097b09d31db97445, type: 3}
   - {fileID: 83122967512289450, guid: c62f5fae9032eb547b4f3b95904465cc, type: 3}
@@ -72,3 +91,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6448efeca17fef428a6d75110d3cd6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  MouseScrpit: {fileID: 0}
+  Tilemapy: {fileID: 0}
+  BuldingLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  IsThisTileMatching: 0
+--- !u!114 &5738584651545625841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4884808520668008891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f0d2dfaa9c71744badb6073918c663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  TypesOfBuildings:
+  - {fileID: 6164748612352016119, guid: f3b63224d5398b246bcf9963728ce742, type: 3}
+  - {fileID: 6164748612352016119, guid: 9cb3b8c6cb298ba469b5fada5b7e902c, type: 3}
+  - {fileID: 6164748612352016119, guid: e2f9366e177eb1a48a6a1bd33036966b, type: 3}
+  - {fileID: 6164748612352016119, guid: e710b6a0b0d64fc48bb1adaf8c05f571, type: 3}
+  - {fileID: 6164748612352016119, guid: 515870dde22f8544098aa3c647fd9c5c, type: 3}
+  - {fileID: 6164748612352016119, guid: 154875baf310019489880258b46b4fa7, type: 3}
+  - {fileID: 6164748612352016119, guid: 69a79b01bb20b8c44b0bcb38a9d04788, type: 3}
+  - {fileID: 6164748612352016119, guid: b92ac372a571b87488e88eca68cc8ca6, type: 3}
+  - {fileID: 6164748612352016119, guid: 776b3a651b5501743ac44d6090e664e1, type: 3}
+  - {fileID: 6164748612352016119, guid: aae2ea5e3934e4143913fa93ee3bbcea, type: 3}
+  - {fileID: 6164748612352016119, guid: 614cff11152306d49b2baa5e032fc314, type: 3}
+  - {fileID: 6164748612352016119, guid: 5b0dad09e8b695a4f90f1731320ea82c, type: 3}
+  - {fileID: 6164748612352016119, guid: 58ee26847af34784ca57ea18e2913f1b, type: 3}
+  - {fileID: 6164748612352016119, guid: 7e028c711fa518e44874755b6cdbde23, type: 3}
+  - {fileID: 6164748612352016119, guid: 054cba5f72f47b24b9fa9d27c863d2a3, type: 3}
+--- !u!114 &1247160328510296996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4884808520668008891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c59c64065353249943e3db71a25407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  MaxFoodAmount: 150
+  MaxPeopleStorage: 150
+  FoodSlider: {fileID: 0}
