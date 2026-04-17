@@ -3,6 +3,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 public class MouseController : MonoBehaviour
 {
+    public static MouseController Instance { get; private set; }
+
     Camera mainCamera;
     public GameObject Collision;
     public GameObject PlacingTheBuilding;
@@ -20,6 +22,7 @@ public class MouseController : MonoBehaviour
     public GameObject CursorUi;
     void Start()
     {
+        Instance = this;
         mainCamera = Camera.main;
     }
     void Update()

@@ -1,10 +1,12 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BoostingBuilding : MonoBehaviour
 {
-    public float detectionRadius = 2.5f; // Promieñ sprawdzania
-                                       // Lista budynków, które s¹ aktualnie w zasiêgu
+    public float boostAmount; // Iloœæ boosta, który dodaje do prêdkoœci myszy
+    public float detectionRadius = 2.5f; 
+    public bool ColectingSpeedBoost = false;
     private HashSet<GameObject> buildingsInRange = new HashSet<GameObject>();
 
     void Update()
@@ -58,16 +60,32 @@ public class BoostingBuilding : MonoBehaviour
         }
     }
 
+
     // Wywo³ywane raz, gdy budynek znajdzie siê w kole
     void OnBuildingEnter(GameObject building)
     {
-        building.gameObject.GetComponent<Bulding>().AdaptiveBoost += 1;
+        if (!ColectingSpeedBoost)
+        {
+            building.gameObject.GetComponent<Bulding>().AdaptiveBoost += Convert.ToInt32(boostAmount);
+        }
+        else
+        {
+            Debug.Log("Boosting Speed");
+        }
+            
     }
 
     // Wywo³ywane raz, gdy budynek opuœci ko³o
     void OnBuildingExit(GameObject building)
     {
-        building.gameObject.GetComponent<Bulding>().AdaptiveBoost -= 1;
+        if (!ColectingSpeedBoost)
+        {
+            building.gameObject.GetComponent<Bulding>().AdaptiveBoost -= Convert.ToInt32(boostAmount);
+        }
+        else
+        {
+           Debug.Log("Stop Boosting Speed");
+        }
     }
 
     private void OnDrawGizmosSelected()

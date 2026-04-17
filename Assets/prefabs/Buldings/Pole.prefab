@@ -123,13 +123,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8245451682209789479}
-  - component: {fileID: -6362745582384328958}
-  - component: {fileID: -9024393335062933128}
+  - component: {fileID: -7570751148348826596}
   - component: {fileID: -7496202678886316444}
   - component: {fileID: 3774714470394484737}
+  - component: {fileID: 343062420382005509}
   m_Layer: 6
   m_Name: Pole
-  m_TagString: Bulding
+  m_TagString: Boosting Bulding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +150,7 @@ Transform:
   - {fileID: 1091336848729257646}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6362745582384328958
+--- !u!114 &-7570751148348826596
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,30 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e006d2ea7592143a4bf75cc7ce5482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  CostsOfResources: 19000000320000000a000000
+  CostsOfResources: 0a0000000a000000
   WhatResourcesNeedToBuild:
   - {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
-  - {fileID: 1680948049756902282, guid: f6c36d073fb06fe42b15094fceb0ae0c, type: 3}
   - {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
---- !u!114 &-9024393335062933128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6164748612352016119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55f136fcf14f372498b68ed122f39a42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  AdaptiveBoost: 0
-  isProdusingBuilding: 1
-  ProdusingItemName: {fileID: 7062008708194500870, guid: e47bb37f038f01f4eabaa1e3dc3282f9, type: 3}
-  ItemNeeded: []
-  Cost: 1
-  amoutOfItemProdusing: 2
-  PopUp: {fileID: 1876300791191131365, guid: 83db28035b1396c4a8af9cdbdd047cd3, type: 3}
+  BuildingSize: 1
+  Description: 
 --- !u!61 &-7496202678886316444
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -230,7 +212,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &3774714470394484737
 Rigidbody2D:
@@ -259,3 +241,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &343062420382005509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164748612352016119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f9e3684af4f0c4aa2dbc65d003c21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  boostAmount: 0.5
+  detectionRadius: 2.5
+  ColectingSpeedBoost: 0

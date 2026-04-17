@@ -166,6 +166,8 @@ MonoBehaviour:
   WhatResourcesNeedToBuild:
   - {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
   - {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
+  BuildingSize: 1
+  Description: 
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +185,7 @@ MonoBehaviour:
   ProdusingItemName: {fileID: 1617651943656758187, guid: 31abcb0ba22b0ae4997c141fc8361f7e, type: 3}
   ItemNeeded:
   - {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
-  Cost: 1
+  Cost: 2
   amoutOfItemProdusing: 1
   PopUp: {fileID: 1876300791191131365, guid: 83db28035b1396c4a8af9cdbdd047cd3, type: 3}
 --- !u!61 &-7496202678886316444

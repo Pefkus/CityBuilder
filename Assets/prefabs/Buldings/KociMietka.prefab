@@ -253,4 +253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f9e3684af4f0c4aa2dbc65d003c21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  boostAmount: 1
   detectionRadius: 4
+  ColectingSpeedBoost: 1

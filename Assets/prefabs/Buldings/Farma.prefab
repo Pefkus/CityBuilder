@@ -166,6 +166,8 @@ MonoBehaviour:
   WhatResourcesNeedToBuild:
   - {fileID: 1542653592078830858, guid: 85ce90619c83c3945827bafec97ba5bf, type: 3}
   - {fileID: 7062008708194500870, guid: e47bb37f038f01f4eabaa1e3dc3282f9, type: 3}
+  BuildingSize: 1
+  Description: 
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   AdaptiveBoost: 0
   isProdusingBuilding: 1
-  ProdusingItemName: {fileID: 3566080539008039699, guid: 311378c6429720e48a5aee73beb8eee4, type: 3}
+  ProdusingItemName: {fileID: 7062008708194500870, guid: e47bb37f038f01f4eabaa1e3dc3282f9, type: 3}
   ItemNeeded: []
   Cost: 0
   amoutOfItemProdusing: 1

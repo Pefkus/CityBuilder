@@ -10,7 +10,7 @@ public class StorageBuilding : MonoBehaviour
         FoodController.Instance.ChangeMaxFoodAmount(AditionalFoodStorage);
         FoodController.Instance.ChangePeopleStorage(MaxPeopleStorage);
     }
-     void Update()
+    void Update()
     {
 
     }

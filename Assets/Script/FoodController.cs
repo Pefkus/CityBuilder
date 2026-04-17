@@ -17,6 +17,19 @@ public class FoodController : MonoBehaviour
 
     void Start()
     {
+        GameObject[] MainBuilding = GameObject.FindGameObjectsWithTag("Building");
+        foreach(GameObject building in MainBuilding)
+        {
+            if(building.GetComponent<TypeOfBuilding>() != null && building.GetComponent<TypeOfBuilding>().MainBuilding)
+            {
+                if(building.GetComponent<StorageBuilding>() != null)
+                {
+                    MaxFoodAmount = building.GetComponent<StorageBuilding>().AditionalFoodStorage;
+                    MaxPeopleStorage = building.GetComponent<StorageBuilding>().MaxPeopleStorage;
+                }
+                break;
+            }
+        }
         FoodSlider.maxValue = MaxFoodAmount;
     }
     // Funkcja do zmiany maksymalnej iloœci jedzenia, która jest przechowywana, i aktualizacja suwaka, ¿eby odzwierciedla³ tê zmianê
