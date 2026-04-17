@@ -166,6 +166,9 @@ MonoBehaviour:
   WhatResourcesNeedToBuild:
   - {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
   BuildingSize: 1
+  MainBuilding: 0
+  BuildingRadius: 0
+  BuildingsPrefabs: []
   Description: 
 --- !u!61 &-7496202678886316444
 BoxCollider2D:

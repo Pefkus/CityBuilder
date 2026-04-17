@@ -167,6 +167,10 @@ MonoBehaviour:
   - {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
   - {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
   BuildingSize: 1
+  MainBuilding: 0
+  BuildingRadius: 0
+  BuildingsPrefabs: {fileID: 6164748612352016119, guid: e710b6a0b0d64fc48bb1adaf8c05f571, type: 3}
+  LineRenderer: {fileID: 0}
   Description: 
 --- !u!61 &-7496202678886316444
 BoxCollider2D:
@@ -253,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f9e3684af4f0c4aa2dbc65d003c21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  boostAmount: 0.5
-  detectionRadius: 2.5
+  boostAmount: 1
+  detectionRadius: 2
   ColectingSpeedBoost: 0
+  Forspecificbuilding: {fileID: 6164748612352016119, guid: e710b6a0b0d64fc48bb1adaf8c05f571, type: 3}

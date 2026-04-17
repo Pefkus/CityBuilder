@@ -8,6 +8,7 @@ public class BoostingBuilding : MonoBehaviour
     public float detectionRadius = 2.5f; 
     public bool ColectingSpeedBoost = false;
     private HashSet<GameObject> buildingsInRange = new HashSet<GameObject>();
+    public GameObject Forspecificbuilding;
 
     void Update()
     {
@@ -65,12 +66,19 @@ public class BoostingBuilding : MonoBehaviour
     void OnBuildingEnter(GameObject building)
     {
         if (!ColectingSpeedBoost)
-        {
-            building.gameObject.GetComponent<Bulding>().AdaptiveBoost += Convert.ToInt32(boostAmount);
-        }
-        else
-        {
-            Debug.Log("Boosting Speed");
+        {   
+            if(Forspecificbuilding != null)
+            {
+                if(building.name == Forspecificbuilding.name)
+                {
+                    building.gameObject.GetComponent<Bulding>().AdaptiveBoost += Convert.ToInt32(boostAmount);
+                }
+                return;
+            }
+            else
+            {
+                building.gameObject.GetComponent<Bulding>().AdaptiveBoost += Convert.ToInt32(boostAmount);
+            }
         }
             
     }
@@ -80,11 +88,19 @@ public class BoostingBuilding : MonoBehaviour
     {
         if (!ColectingSpeedBoost)
         {
-            building.gameObject.GetComponent<Bulding>().AdaptiveBoost -= Convert.ToInt32(boostAmount);
-        }
-        else
-        {
-           Debug.Log("Stop Boosting Speed");
+            if (Forspecificbuilding != null)
+            {
+                if (building.name == Forspecificbuilding.name)
+                {
+                    building.gameObject.GetComponent<Bulding>().AdaptiveBoost -= Convert.ToInt32(boostAmount);
+                }
+
+                return;
+            }
+            else
+            {
+                    building.gameObject.GetComponent<Bulding>().AdaptiveBoost -= Convert.ToInt32(boostAmount);
+            }
         }
     }
 

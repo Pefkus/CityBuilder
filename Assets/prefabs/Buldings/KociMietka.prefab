@@ -167,6 +167,9 @@ MonoBehaviour:
   - {fileID: 1542653592078830858, guid: 85ce90619c83c3945827bafec97ba5bf, type: 3}
   - {fileID: 7062008708194500870, guid: e47bb37f038f01f4eabaa1e3dc3282f9, type: 3}
   BuildingSize: 1
+  MainBuilding: 0
+  BuildingRadius: 0
+  BuildingsPrefabs: []
   Description: 
 --- !u!61 &-7496202678886316444
 BoxCollider2D:

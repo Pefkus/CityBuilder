@@ -168,6 +168,9 @@ MonoBehaviour:
   - {fileID: 3717724002635532007, guid: 2c988697117bc8c40b3f809272def5d6, type: 3}
   - {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
   BuildingSize: 1
+  MainBuilding: 0
+  BuildingRadius: 0
+  BuildingsPrefabs: []
   Description: 
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
