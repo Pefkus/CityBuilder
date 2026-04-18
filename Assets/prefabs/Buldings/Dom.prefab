@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 771672a66cabe054ebba003af0a855a1, type: 3}
+  m_Sprite: {fileID: 7499271843934987772, guid: 51b7d6972e2ea124e98d345b267da4a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -168,7 +168,8 @@ MonoBehaviour:
   BuildingSize: 1
   MainBuilding: 0
   BuildingRadius: 0
-  BuildingsPrefabs: []
+  BuildingsPrefabs: {fileID: 0}
+  LineRenderer: {fileID: 0}
   Description: 
 --- !u!61 &-7496202678886316444
 BoxCollider2D:

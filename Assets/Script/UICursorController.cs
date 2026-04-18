@@ -83,6 +83,10 @@ public class UICursorController : MonoBehaviour
         {
             ItemSlotContainer.SetActive(false);
             BuildingButtonContainer.SetActive(false);
+            foreach (GameObject resource in RecourcesNeeded)
+            {
+                resource.SetActive(false);
+            }
         }
     }
 }
