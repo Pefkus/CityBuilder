@@ -150,7 +150,7 @@ public class CreatorBuildingsMenager : MonoBehaviour
     {
         Vector2 center = TypesOfBuildingMenager.Instance.MainBuilding.transform.position;
         float radius = TypesOfBuildingMenager.Instance.MainBuilding.GetComponent<TypeOfBuilding>().BuildingRadius;
-        Vector2 size = new Vector2(radius, radius);
+        Vector2 size = new Vector2(radius*1.99f, radius);
         // 1. ZnajdŸ wszystkie collidery w zasiêgu
         Collider2D[] hitColliders = Physics2D.OverlapBoxAll(center, size, 0);
         UpdateLineRenderer(lir, center, size);
