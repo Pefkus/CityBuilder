@@ -63,6 +63,7 @@ public class Bulding : MonoBehaviour
             if (FoodController.Instance.GetCurrentFoodAmount() + (ProdusingItemName.GetComponent<Food>().KgPerUnit * (  amoutOfItemProdusing + boost + AdaptiveBoost)) >= FoodController.Instance.MaxFoodAmount)
             {
                 InventoryManager.Instance.ChangeValueOfItemInInventoryTo(ProdusingItemName, ((int)(FoodController.Instance.MaxFoodAmount / ProdusingItemName.GetComponent<Food>().KgPerUnit)));
+                FoodController.Instance.ChangeFoodAmountTo(FoodController.Instance.MaxFoodAmount );
                 return;
             } 
             else 

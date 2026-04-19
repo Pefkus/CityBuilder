@@ -50,6 +50,10 @@ public class FoodController : MonoBehaviour
             }
         }
     }
+    public void ChangeFoodAmountTo(float amount)
+    {
+        FoodSlider.value = amount;
+    }
     public float GetCurrentFoodAmount()
     {
         return FoodSlider.value;
