@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class UICursorController : MonoBehaviour
@@ -19,7 +20,11 @@ public class UICursorController : MonoBehaviour
     public List<GameObject> RecourcesNeeded = new List<GameObject>();
     public List<TextMeshProUGUI> RecourcesNeededQuantity = new List<TextMeshProUGUI>();
     public TextMeshProUGUI DescriptionOfBuilding;
-
+    public MouseController mouseController;
+    [Header("Collision")]
+    private Collider2D collisionButton;
+    public float timer;
+    float Speed = 1f;
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -30,6 +35,7 @@ public class UICursorController : MonoBehaviour
         }
         inventoryManager = InventoryManager.Instance;
         typesOfBuildingMenager = TypesOfBuildingMenager.Instance;
+        Speed = mouseController.Speed;
     }
 
     void Update()
@@ -44,6 +50,19 @@ public class UICursorController : MonoBehaviour
             out localPoint);
 
         rectTransform.localPosition = localPoint + new Vector2(0 , 10);
+
+        timer += Time.deltaTime * Speed;
+        if (Input.GetMouseButton(0))
+        {
+            if(collisionButton != null && collisionButton.gameObject.CompareTag("UiComponentButton"))
+            {
+                if (timer >= 1f)
+                {
+                    collisionButton.GetComponent<Bulding>().ProdusingItem(0);
+                    timer = 0f;
+                }
+            }
+        }
     }
     // Funkcja do pokazywania UI z informacjami o przedmiocie lub budynku, w zale¿noœci od tego, z czym koliduje kursor, i ukrywanie tego UI, gdy kursor przestaje kolidowaæ z danym obiektem
     private void OnTriggerEnter2D(Collider2D collision)
@@ -76,10 +95,18 @@ public class UICursorController : MonoBehaviour
                 }
             }
         }
+        
+    }
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("UiComponentButton"))
+        {
+            collisionButton = collision;
+        }
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("UIComponent") || collision.gameObject.CompareTag("UIComponentBulding"))
+        if (collision.gameObject.CompareTag("UIComponent") || collision.gameObject.CompareTag("UIComponentBulding") || collision.gameObject.CompareTag("UiComponentButton"))
         {
             ItemSlotContainer.SetActive(false);
             BuildingButtonContainer.SetActive(false);
@@ -87,6 +114,7 @@ public class UICursorController : MonoBehaviour
             {
                 resource.SetActive(false);
             }
+            collisionButton = null;
         }
     }
 }

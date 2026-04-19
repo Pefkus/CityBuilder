@@ -1394,6 +1394,8 @@ MonoBehaviour:
   - {fileID: 2118200169}
   - {fileID: 366259787}
   DescriptionOfBuilding: {fileID: 504671128}
+  mouseController: {fileID: 1716072066}
+  timer: 0
 --- !u!50 &75346315
 Rigidbody2D:
   serializedVersion: 5
@@ -4103,9 +4105,11 @@ GameObject:
   - component: {fileID: 359771947}
   - component: {fileID: 359771946}
   - component: {fileID: 359771945}
+  - component: {fileID: 359771950}
+  - component: {fileID: 359771951}
   m_Layer: 5
   m_Name: "Panel_Kamie\u0144"
-  m_TagString: Untagged
+  m_TagString: UiComponentButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4153,19 +4157,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 359771946}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &359771946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4221,9 +4213,75 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -24}
+  m_AnchoredPosition: {x: 0, y: -80}
   m_SizeDelta: {x: -20, y: 112}
-  m_Pivot: {x: 0.5, y: 1}
+  m_Pivot: {x: 0.50000006, y: 0.49999997}
+--- !u!114 &359771950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359771944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f136fcf14f372498b68ed122f39a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bulding
+  AdaptiveBoost: 0
+  isProdusingBuilding: 1
+  ProdusingItemName: {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
+  ItemNeeded: []
+  Cost: 0
+  amoutOfItemProdusing: 1
+  PopUp: {fileID: 1876300791191131365, guid: 83db28035b1396c4a8af9cdbdd047cd3, type: 3}
+  ItsUi: 1
+--- !u!61 &359771951
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359771944}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &365878009
 GameObject:
   m_ObjectHideFlags: 0
@@ -7807,9 +7865,11 @@ GameObject:
   - component: {fileID: 634272968}
   - component: {fileID: 634272967}
   - component: {fileID: 634272966}
+  - component: {fileID: 634272971}
+  - component: {fileID: 634272972}
   m_Layer: 5
   m_Name: Panel_Drewno
-  m_TagString: Untagged
+  m_TagString: UiComponentButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7857,19 +7917,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 634272967}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &634272967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7923,11 +7971,77 @@ RectTransform:
   - {fileID: 882263995}
   m_Father: {fileID: 709699327}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000045776367, y: -79.999985}
-  m_SizeDelta: {x: -20, y: 112}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 84.000015}
+  m_SizeDelta: {x: 140, y: 112}
+  m_Pivot: {x: 0.49999985, y: 0.50000006}
+--- !u!114 &634272971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634272965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f136fcf14f372498b68ed122f39a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bulding
+  AdaptiveBoost: 0
+  isProdusingBuilding: 1
+  ProdusingItemName: {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
+  ItemNeeded: []
+  Cost: 0
+  amoutOfItemProdusing: 1
+  PopUp: {fileID: 1876300791191131365, guid: 83db28035b1396c4a8af9cdbdd047cd3, type: 3}
+  ItsUi: 1
+--- !u!61 &634272972
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634272965}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &638911138
 GameObject:
   m_ObjectHideFlags: 0
@@ -17918,9 +18032,11 @@ GameObject:
   - component: {fileID: 1436663963}
   - component: {fileID: 1436663962}
   - component: {fileID: 1436663961}
+  - component: {fileID: 1436663966}
+  - component: {fileID: 1436663967}
   m_Layer: 5
   m_Name: Panel_Jagody
-  m_TagString: Untagged
+  m_TagString: UiComponentButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17968,19 +18084,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1436663962}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1436663962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18036,9 +18140,75 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -24}
+  m_AnchoredPosition: {x: 0, y: -80}
   m_SizeDelta: {x: -20, y: 112}
-  m_Pivot: {x: 0.5, y: 1}
+  m_Pivot: {x: 0.5, y: 0.49999997}
+--- !u!114 &1436663966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436663960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f136fcf14f372498b68ed122f39a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bulding
+  AdaptiveBoost: 0
+  isProdusingBuilding: 1
+  ProdusingItemName: {fileID: 1680948049756902282, guid: f6c36d073fb06fe42b15094fceb0ae0c, type: 3}
+  ItemNeeded: []
+  Cost: 0
+  amoutOfItemProdusing: 1
+  PopUp: {fileID: 1876300791191131365, guid: 83db28035b1396c4a8af9cdbdd047cd3, type: 3}
+  ItsUi: 1
+--- !u!61 &1436663967
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436663960}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1437143105
 GameObject:
   m_ObjectHideFlags: 0
@@ -20983,8 +21153,11 @@ MonoBehaviour:
   cursorMarker: {fileID: 1716072062}
   cellPosition: {x: 0, y: 0, z: 0}
   cursorMarkerSpriteRenderer: {fileID: 135096598}
+  BoxCollider2D: {fileID: 1716072065}
   myGrid: {fileID: 310158638}
   Speed: 1.5
+  timer: 0
+  baseInterval: 1
   CursorUi: {fileID: 75346312}
 --- !u!1 &1718577715
 GameObject:

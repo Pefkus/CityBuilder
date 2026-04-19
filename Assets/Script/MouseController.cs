@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -9,15 +10,18 @@ public class MouseController : MonoBehaviour
     public GameObject Collision;
     public GameObject PlacingTheBuilding;
     public bool CreatingBuilding = false;
+    private List<GameObject> buildingsInRange = new List<GameObject>();
 
     public GameObject particlesystem;
     public Transform cursorMarker;
     public Vector3Int cellPosition;
     public GameObject cursorMarkerSpriteRenderer;
+    public BoxCollider2D BoxCollider2D;
     public Grid myGrid;
+    [Header("CLICK Settings")]
     public float Speed = 1.5f;
-    private float timer = 0f;
-    private float baseInterval = 1f; // Bazowa sekunda
+    public float timer = 0f;
+    public float baseInterval = 1f; 
     [Header("CursorUi")]
     public GameObject CursorUi;
     void Start()
@@ -27,6 +31,7 @@ public class MouseController : MonoBehaviour
     }
     void Update()
     {
+        DetectCollision();
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
         {
             // Ukrywamy znacznik kursora (wy³¹czamy obiekt w hierarchii)
@@ -72,7 +77,7 @@ public class MouseController : MonoBehaviour
         }
         else
         {
-            if (Collision != null)
+            if (buildingsInRange.Count > 0)
             {
                 if (Collision.gameObject.CompareTag("Bulding") || Collision.gameObject.CompareTag("Boosting Bulding"))
                 {
@@ -99,8 +104,6 @@ public class MouseController : MonoBehaviour
                     cursorMarker.GetComponent<BoxCollider2D>().size = new Vector2(0.75f, 0.75f);
                     cursorMarkerSpriteRenderer.transform.position = cursorMarker.position;
                     cursorMarker.position = myGrid.GetCellCenterWorld(cellPosition);
-                    
-                
             }
         }
         
@@ -148,28 +151,48 @@ public class MouseController : MonoBehaviour
             
         }
     }
-
-    
-
-
-    // Funkcje do wykrywania kolizji z budynkami, ¿eby wiedzieæ, w co klikamy i gdzie mo¿emy postawiæ budynek
-    private void OnTriggerEnter2D(Collider2D collision)
+    // Ta funkcja wykrywa kolizje z budynkami i aktualizuje listê budynków w zasiêgu oraz aktualny obiekt kolizji
+    void DetectCollision()
     {
-        if (collision.gameObject.CompareTag("Bulding") || collision.gameObject.CompareTag("Boosting Bulding"))
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(BoxCollider2D.bounds.center, BoxCollider2D.bounds.size, 0f);
+        HashSet<GameObject> currentlyDetected = new HashSet<GameObject>();
+
+        foreach (var hitCollider in hitColliders)
         {
-            if(PlacingTheBuilding == null || PlacingTheBuilding.gameObject != collision.gameObject)
+            if (hitCollider.CompareTag("Bulding") || hitCollider.CompareTag("Boosting Bulding"))
             {
-                Collision = collision.gameObject;
+                if (hitCollider.gameObject == PlacingTheBuilding)
+                {
+                    continue;
+                }
+                GameObject building = hitCollider.gameObject;
+                currentlyDetected.Add(building);
+
+                // Odpowiednik OnEnter: Jeœli nie by³o go wczeœniej, a jest teraz
+                if (!buildingsInRange.Contains(building))
+                {
+                    buildingsInRange.Add(building);
+                    Collision = building;
+                }
             }
-           
-        } 
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bulding") || collision.gameObject.CompareTag("Boosting Bulding"))
+        }
+
+        List<GameObject> toRemove = new List<GameObject>();
+        foreach (var building in buildingsInRange)
         {
+            if (!currentlyDetected.Contains(building))
+            {
+                toRemove.Add(building);
+            }
+        }
+
+        foreach (var building in toRemove)
+        {
+            buildingsInRange.Remove(building);
+            if (Collision == building)
+            {
                 Collision = null;
+            }
         }
     }
-
 }

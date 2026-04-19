@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bulding : MonoBehaviour
 {
@@ -10,6 +11,17 @@ public class Bulding : MonoBehaviour
     public int amoutOfItemProdusing;
     public GameObject PopUp;
     // Funkcja do produkowania przedmiotu, która sprawdza, czy budynek jest budynkiem produkuj¹cym, czy s¹ potrzebne jakieœ przedmioty do produkcji i czy s¹ one dostêpne w ekwipunku, a nastêpnie dodaje wyprodukowany przedmiot do ekwipunku i tworzy efekt wizualny
+    [Header("IF its UI")]
+    public bool ItsUi = false;
+    BoxCollider2D BoxCollider2D;
+    void Start()
+    {
+        if (ItsUi)
+        {
+            BoxCollider2D = GetComponent<BoxCollider2D>();
+            BoxCollider2D.size = new Vector2(transform.GetComponent<RectTransform>().rect.width, transform.GetComponent<RectTransform>().rect.height);
+        }
+    }
     public void ProdusingItem(int boost)
     {
         if(isProdusingBuilding)
@@ -69,7 +81,7 @@ public class Bulding : MonoBehaviour
 
     void CreatePopItem()
     {
-        if (PopUp != null)
+        if (PopUp != null && !ItsUi)
         {
             PopUp.GetComponent<ParticleSystem>().textureSheetAnimation.SetSprite(0, ProdusingItemName.GetComponent<SpriteRenderer>().sprite);
             Instantiate(PopUp, transform.position, Quaternion.identity, this.transform);
