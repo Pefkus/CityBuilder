@@ -24,6 +24,7 @@ public class UICursorController : MonoBehaviour
     [Header("Collision")]
     private Collider2D collisionButton;
     public float timer;
+    public int ClickBonus = 0;
     float Speed = 1f;
     void Start()
     {
@@ -35,11 +36,12 @@ public class UICursorController : MonoBehaviour
         }
         inventoryManager = InventoryManager.Instance;
         typesOfBuildingMenager = TypesOfBuildingMenager.Instance;
-        Speed = mouseController.Speed;
     }
 
     void Update()
     {
+        Speed = mouseController.Speed;
+        ClickBonus = mouseController.ClickBonus;
         Vector2 localPoint;
 
         // Konwersja pozycji myszy na pozycjê relatywn¹ dla Canvasu
@@ -58,7 +60,7 @@ public class UICursorController : MonoBehaviour
             {
                 if (timer >= 1f)
                 {
-                    collisionButton.GetComponent<Bulding>().ProdusingItem(0);
+                    collisionButton.GetComponent<Bulding>().ProdusingItem(ClickBonus);
                     timer = 0f;
                 }
             }

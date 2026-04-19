@@ -64,7 +64,17 @@ public class InventoryManager : MonoBehaviour
         }
         ItHasAlreadyASlot(item);
     }
-
+    public void ChangeValueOfItemInInventoryTo(GameObject name, int amount)
+    {
+        GameObject item = itemsInInventory.Find(x => x.name == name.name);
+        if (item == null)
+        {
+            Debug.LogError("Nieistnieje item o nazwie: " + name);
+            return;
+        }
+        amountOfItemsInInventory[itemsInInventory.IndexOf(item)] = amount;
+        ItHasAlreadyASlot(item);
+    }
     // Funkcja do sprawdzania, czy przedmiot ju¿ ma przypisany slot w ekwipunku, jeœli tak to aktualizuje jego iloœæ, jeœli nie to szuka pustego slotu
     void ItHasAlreadyASlot(GameObject item)
     {

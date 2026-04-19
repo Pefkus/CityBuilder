@@ -22,6 +22,7 @@ public class MouseController : MonoBehaviour
     public float Speed = 1.5f;
     public float timer = 0f;
     public float baseInterval = 1f; 
+    public int ClickBonus = 0;
     [Header("CursorUi")]
     public GameObject CursorUi;
     void Start()
@@ -125,7 +126,7 @@ public class MouseController : MonoBehaviour
                             if(Collision.gameObject.GetComponent<Bulding>() != null)
                             {
                                 if (Collision.gameObject.GetComponent<Bulding>().isProdusingBuilding)
-                                    Collision.gameObject.GetComponent<Bulding>().ProdusingItem(0);
+                                    Collision.gameObject.GetComponent<Bulding>().ProdusingItem(ClickBonus);
                             }
                             
                         }

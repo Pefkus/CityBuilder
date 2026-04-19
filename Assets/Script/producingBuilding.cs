@@ -41,11 +41,6 @@ public class Bulding : MonoBehaviour
                 // Jeœli mamy, to odejmujemy potrzebne przedmioty z ekwipunku i dodajemy wyprodukowany przedmiot, bior¹c pod uwagê boosty
                 if (canProdusing)
                 {
-                    if(ProdusingItemName.CompareTag("Food") && FoodController.Instance.GetCurrentFoodAmount() + amoutOfItemProdusing + boost + AdaptiveBoost > FoodController.Instance.MaxFoodAmount)
-                    {
-                        Debug.Log("Nie mo¿na wyprodukowaæ tego przedmiotu, poniewa¿ przekroczy to maksymaln¹ iloœæ jedzenia");
-                        return;
-                    }
                     foreach (GameObject item in ItemNeeded)
                     {
                         InventoryManager.Instance.ChangeValueOfItemInInventory(item, -Cost - boost - AdaptiveBoost);
@@ -65,7 +60,12 @@ public class Bulding : MonoBehaviour
     {
         if (ProdusingItemName.CompareTag("Food"))
         {
-            if(FoodController.Instance.GetCurrentFoodAmount() + amoutOfItemProdusing + boost + AdaptiveBoost <= FoodController.Instance.MaxFoodAmount)
+            if (FoodController.Instance.GetCurrentFoodAmount() + (ProdusingItemName.GetComponent<Food>().KgPerUnit * (  amoutOfItemProdusing + boost + AdaptiveBoost)) >= FoodController.Instance.MaxFoodAmount)
+            {
+                InventoryManager.Instance.ChangeValueOfItemInInventoryTo(ProdusingItemName, ((int)(FoodController.Instance.MaxFoodAmount / ProdusingItemName.GetComponent<Food>().KgPerUnit)));
+                return;
+            } 
+            else 
             {
                 FoodController.Instance.ChangeFoodAmount(amoutOfItemProdusing + boost + AdaptiveBoost, ProdusingItemName);
                 InventoryManager.Instance.ChangeValueOfItemInInventory(ProdusingItemName, amoutOfItemProdusing + boost + AdaptiveBoost);
