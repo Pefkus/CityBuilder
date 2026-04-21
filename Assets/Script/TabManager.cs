@@ -23,7 +23,7 @@ public class TabManager : MonoBehaviour
 
     void Start()
     {
-        SwitchTab(1);
+        SwitchTab(0);
     }
 
     public void SwitchTab(int tabIndex)
