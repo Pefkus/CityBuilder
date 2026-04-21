@@ -37,18 +37,6 @@ public class FoodController : MonoBehaviour
         MaxFoodAmount += amount;
         FoodSlider.maxValue = MaxFoodAmount;
     }
-    public void ChangeFoodAmount(float FoodAmountInUnit, GameObject food)
-    {
-        if (food != null)
-        {
-            Food foodScript = food.GetComponent<Food>();
-            if (foodScript != null)
-            {
-                float AmountInKg = FoodAmountInUnit * foodScript.KgPerUnit;
-                FoodSlider.value += AmountInKg;
-            }
-        }
-    }
     public void ChangeFoodAmountTo(float amount)
     {
         FoodSlider.value = amount;
@@ -87,15 +75,28 @@ public class FoodController : MonoBehaviour
         {
             int CorrectUnitOfFood = Mathf.RoundToInt(AmountInKg / food.GetComponent<Food>().KgPerUnit);
             InventoryManager.Instance.ChangeValueOfItemInInventory(food, -CorrectUnitOfFood);
-            ChangeFoodAmount(-AmountInKg, food);
         }
     }
     public void ChangePeopleStorage(int storage) {  
         MaxPeopleStorage += storage;
     }
+    public void ChangevalueSlider()
+    {
+        float amonut = 0;
+        foreach(GameObject food in InventoryManager.Instance.CurrentFood)
+        {
+            Food foodScript = food.GetComponent<Food>();
+            if (foodScript != null)
+            {
+                float AmountInKg = InventoryManager.Instance.GetValueOfItemInInventory(food) * foodScript.KgPerUnit;
+                amonut += AmountInKg;
+            }
+        }
+        FoodSlider.value = amonut;
+    }
     void Update()
     {
-        
+        ChangevalueSlider();
         ChangeSlider();
     }
 }

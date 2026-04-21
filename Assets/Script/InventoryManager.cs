@@ -16,8 +16,8 @@ public class InventoryManager : MonoBehaviour
     // Lista iloœci ka¿dego przedmiotu w ekwipunku, indeks odpowiada indeksowi w itemsInInventory
     public List<int> amountOfItemsInInventory = new List<int>();
 
-    public List<GameObject> Food = new List<GameObject>();
-
+    public List<GameObject> AllFood = new List<GameObject>();
+    public List<GameObject> CurrentFood = new List<GameObject>();
     private void Awake()
     {
         Instance = this;
@@ -41,24 +41,16 @@ public class InventoryManager : MonoBehaviour
         {
             if(item.CompareTag("Food"))
             {
-                Food.Add(item);
+                AllFood.Add(item);
             }
         }
     }
     public GameObject GetRandomItemFood()
     {
-        List<GameObject> CurrentFood = new List<GameObject>();
         GameObject food = null;
-        foreach (GameObject item in Food)
-        {
-            if(GetValueOfItemInInventory(item) > 0)
-            {
-                CurrentFood.Add(item);
-            }
-        }
         if (CurrentFood.Count == 0)
         {
-            food = Food.Find(x => x.name == "jagoda");
+            food = AllFood.Find(x => x.name == "jagoda");
         }
         else
         {
@@ -174,6 +166,23 @@ public class InventoryManager : MonoBehaviour
             if (GetValueOfItemInInventory(item) > 0)
             {
                 ItHasAlreadyASlot(item);
+            }
+        }
+        foreach (GameObject item in AllFood)
+        {
+            if (GetValueOfItemInInventory(item) > 0)
+            {
+                if (!CurrentFood.Contains(item))
+                {
+                    CurrentFood.Add(item);
+                }
+            }
+            else
+            {
+                if (CurrentFood.Contains(item))
+                {
+                    CurrentFood.Remove(item);
+                }
             }
         }
     }

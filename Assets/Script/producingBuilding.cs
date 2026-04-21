@@ -71,12 +71,10 @@ public class Bulding : MonoBehaviour
                 float kgNeeded = maxFood - currentFood;
                 int amountToFill = Mathf.RoundToInt(kgNeeded / weightPerUnit);
                 InventoryManager.Instance.ChangeValueOfItemInInventory(ProdusingItemName, amountToFill);
-                FoodController.Instance.ChangeFoodAmountTo(maxFood);
                 return;
             }
             else
             {
-                FoodController.Instance.ChangeFoodAmount(amoutOfItemProdusing + boost + AdaptiveBoost, ProdusingItemName);
                 InventoryManager.Instance.ChangeValueOfItemInInventory(ProdusingItemName, amoutOfItemProdusing + boost + AdaptiveBoost);
                 CreatePopItem();
             }
