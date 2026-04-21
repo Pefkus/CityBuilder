@@ -60,13 +60,21 @@ public class Bulding : MonoBehaviour
     {
         if (ProdusingItemName.CompareTag("Food"))
         {
-            if (FoodController.Instance.GetCurrentFoodAmount() + (ProdusingItemName.GetComponent<Food>().KgPerUnit * (  amoutOfItemProdusing + boost + AdaptiveBoost)) >= FoodController.Instance.MaxFoodAmount)
+            float currentFood = FoodController.Instance.GetCurrentFoodAmount();
+            float maxFood = FoodController.Instance.MaxFoodAmount;
+            float weightPerUnit = ProdusingItemName.GetComponent<Food>().KgPerUnit;
+            int totalProductionAmount = amoutOfItemProdusing + boost + AdaptiveBoost;
+
+            // Sprawdzamy, czy produkcja przekroczy limit
+            if (currentFood + (weightPerUnit * totalProductionAmount) >= maxFood)
             {
-                InventoryManager.Instance.ChangeValueOfItemInInventoryTo(ProdusingItemName, ((int)(FoodController.Instance.MaxFoodAmount / ProdusingItemName.GetComponent<Food>().KgPerUnit)));
-                FoodController.Instance.ChangeFoodAmountTo(FoodController.Instance.MaxFoodAmount );
+                float kgNeeded = maxFood - currentFood;
+                int amountToFill = Mathf.RoundToInt(kgNeeded / weightPerUnit);
+                InventoryManager.Instance.ChangeValueOfItemInInventory(ProdusingItemName, amountToFill);
+                FoodController.Instance.ChangeFoodAmountTo(maxFood);
                 return;
-            } 
-            else 
+            }
+            else
             {
                 FoodController.Instance.ChangeFoodAmount(amoutOfItemProdusing + boost + AdaptiveBoost, ProdusingItemName);
                 InventoryManager.Instance.ChangeValueOfItemInInventory(ProdusingItemName, amoutOfItemProdusing + boost + AdaptiveBoost);

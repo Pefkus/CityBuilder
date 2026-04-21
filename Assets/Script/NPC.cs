@@ -6,14 +6,20 @@ public class NPC : MonoBehaviour
     public GameObject FavoriteFood;
     private InventoryManager Inventory;
     private FoodController FoodController;
-    public int AmountOfEat = 1;
+    
     public bool HardWorking = false;
-    public bool Mad = false;
+    [Header("Samopoczucie")]
     public float Happines = 100f;
+    public bool Mad = false;
+    public bool Happy = false;
+    [Header("G³ód")]
     float timer = 0f;
-    public float EatTimer = 10f;
+    public float AmountOfHunger = 1.25f;
+    public float TimerToEat = 10f;
     private void Start()
     {
+        AmountOfHunger = Random.Range(1f, 3f);
+        TimerToEat = ChangeEatTimer(1);
         Inventory = InventoryManager.Instance;
         movment = GetComponent<MovmentNPC>();
         FoodController = FoodController.Instance;
@@ -23,10 +29,11 @@ public class NPC : MonoBehaviour
         if(FavoriteFood != null)
         {
             //Jeœli ma swoje ulubione jedzenie w inventoy to je zjada jeœli niema go w inventory to zjda pierwsze z brzegu i jest smutniejszy ;-;
-            if(Inventory.GetValueOfItemInInventory(FavoriteFood) >= AmountOfEat)
+            if(FoodController.GetCurrentKgOfCurrentFood(FavoriteFood) >= AmountOfHunger)
             {
-                FoodController.EatTheFood(AmountOfEat, FavoriteFood);
+                FoodController.EatTheFood(AmountOfHunger, FavoriteFood);
                 ChanageHappines(1);
+                TimerToEat = ChangeEatTimer(1);
             }
             else
             {
@@ -38,81 +45,111 @@ public class NPC : MonoBehaviour
             SearchForFood();
         }
     }
-    //Wyszukaj jedzenie z inevenmtory jakie posaida jesli niema ¿adnego zmniejsz happines
+    //Wyszukaj jedzenie z inevenmtory jakie posaida jesli niema ¿adnego umiera
     void SearchForFood()
     {
-        bool HaveFood = true;
+        bool HaveFood = false;
         foreach (GameObject item in Inventory.itemsInInventory)
         {
-            if (item.CompareTag("Food") && Inventory.GetValueOfItemInInventory(item) > 0)
+            if (item.CompareTag("Food"))
             {
-                FoodController.EatTheFood(AmountOfEat, item);
-                HaveFood = true;
-                break;
+                if(FoodController.GetCurrentKgOfCurrentFood(item) >= AmountOfHunger)
+                {
+                    FoodController.EatTheFood(AmountOfHunger, item);
+                    HaveFood = true;
+                    Debug.Log("Wystarczaj¹co jedzenia");
+                    break;
+
+                }
+            }
+        }
+
+        if (!HaveFood)
+        {
+            bool HaveAnyFood = false;
+            foreach (GameObject item in Inventory.itemsInInventory)
+            {
+                if (item.CompareTag("Food"))
+                {
+                    if (Inventory.GetValueOfItemInInventory(item) > 0)
+                    {
+                        Inventory.ChangeValueOfItemInInventoryTo(item, 0);
+                        
+                        HaveAnyFood = true;
+                        break;
+                    }
+                }
+            }
+            if (HaveAnyFood)
+            {
+                Debug.Log("nie Wystarczaj¹co jedzenia");
+                TimerToEat = ChangeEatTimer(2);
+                ChanageHappines(-2);
             }
             else
             {
-                HaveFood = false;
+                Die();
             }
-        }
-        if (HaveFood)
-        {
-            ChanageHappines(-1);
+
         }
         else
         {
-            ChanageHappines(-2);
+            ChanageHappines(-1);
         }
     }
-
+    void Die()
+    {
+        Destroy(this.gameObject);
+    }
     private void Update()
     {
         if (FavoriteFood == null)
         {
             FavoriteFood = Inventory.GetRandomItemFood();
         }
+
         timer += Time.deltaTime;
-        if(timer >= EatTimer)
+        if(timer >= TimerToEat)
         {
+            FavoriteFood = Inventory.GetRandomItemFood();
             EatFavoriteFood();
             timer = 0;
         }
-        if (HardWorking)
-        {
-            AmountOfEat = 2;
-        }
-        else
-        {
-            AmountOfEat = 1;
-        }
+
         // jes³i jest wkurzony g³ód spada szybciej i porusza siê szybiej 
         if (Mad)
         {
             movment.moveSpeed = 8f;
             movment.maxWaitTime = 1f;
-            if (HardWorking)
-            {
-                EatTimer = 3f;
-            }
-            else
-            {
-                EatTimer = 7f;
-            }
         }
         else
         {
             movment.moveSpeed = 4.5f;
             movment.maxWaitTime = 3f;
-            if (HardWorking)
-            {
-                EatTimer = 5f;
-            }
-            else
-            {
-                EatTimer = 10f;
-            }
         }
 
+    }
+    float ChangeEatTimer(float Cut)
+    {
+        float time = 0f;
+        float speed = 3f;
+        if (HardWorking)
+        {
+            speed = 2f;
+        }
+        if (Mad)
+        {
+            speed -= 0.5f;
+        }
+        if (Cut <= 1)
+        {
+            time = (AmountOfHunger * 1.5f) * speed;
+        }
+        else
+        {
+            time = (TimerToEat * 1.5f) / Cut;
+        }
+        return time;
     }
     void ChanageHappines(float amount)
     {

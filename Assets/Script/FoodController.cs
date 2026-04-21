@@ -37,15 +37,15 @@ public class FoodController : MonoBehaviour
         MaxFoodAmount += amount;
         FoodSlider.maxValue = MaxFoodAmount;
     }
-    public void ChangeFoodAmount(float amount, GameObject food)
+    public void ChangeFoodAmount(float FoodAmountInUnit, GameObject food)
     {
         if (food != null)
         {
             Food foodScript = food.GetComponent<Food>();
             if (foodScript != null)
             {
-                amount *= foodScript.KgPerUnit;
-                FoodSlider.value += amount;
+                float AmountInKg = FoodAmountInUnit * foodScript.KgPerUnit;
+                FoodSlider.value += AmountInKg;
             }
         }
     }
@@ -57,7 +57,11 @@ public class FoodController : MonoBehaviour
     {
         return FoodSlider.value;
     }
-
+    public float GetCurrentKgOfCurrentFood(GameObject food)
+    {
+        float unit =  InventoryManager.Instance.GetValueOfItemInInventory(food) * food.GetComponent<Food>().KgPerUnit ;
+        return unit;
+    }
 
     // Funkcja do zmiany koloru suwaka w zale¿noœci od aktualnej iloœci jedzenia, ¿eby ³atwiej by³o zobaczyæ, kiedy zaczyna go brakowaæ
     void ChangeSlider()
@@ -75,28 +79,23 @@ public class FoodController : MonoBehaviour
         {
             FoodSlider.fillRect.GetComponent<Image>().color = Color.green;
         }
-
     }
     // Funkcja do jedzenia jedzenia, która sprawdza, czy jest wystarczaj¹co jedzenia w suwaku, a nastêpnie szuka przedmiotu z tagiem "Food" w ekwipunku i odejmuje z niego okreœlon¹ iloœæ, a tak¿e zmienia iloœæ jedzenia w suwaku
-    public void EatTheFood(int amount, GameObject food)
+    public void EatTheFood(float AmountInKg, GameObject food)
     {
-        if (FoodSlider.value > 0)
+        if (InventoryManager.Instance.GetValueOfItemInInventory(food) > 0)
         {
-            if (food.CompareTag("Food") && InventoryManager.Instance.GetValueOfItemInInventory(food) > 0)
-            {
-                InventoryManager.Instance.ChangeValueOfItemInInventory(food, -amount);
-                ChangeFoodAmount(-amount, food);
-            }
+            int CorrectUnitOfFood = Mathf.RoundToInt(AmountInKg / food.GetComponent<Food>().KgPerUnit);
+            InventoryManager.Instance.ChangeValueOfItemInInventory(food, -CorrectUnitOfFood);
+            ChangeFoodAmount(-AmountInKg, food);
         }
     }
-
-
-
     public void ChangePeopleStorage(int storage) {  
         MaxPeopleStorage += storage;
     }
     void Update()
     {
+        
         ChangeSlider();
     }
 }

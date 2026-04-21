@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 public class InventoryManager : MonoBehaviour
 {
     // Singleton, ¿eby mieæ ³atwy dostêp do ekwipunku z ka¿dego miejsca
@@ -57,9 +56,15 @@ public class InventoryManager : MonoBehaviour
                 CurrentFood.Add(item);
             }
         }
-        int number = Random.Range(0, CurrentFood.Count);
-        food = Food[number];
-        
+        if (CurrentFood.Count == 0)
+        {
+            food = Food.Find(x => x.name == "jagoda");
+        }
+        else
+        {
+            int number = Random.Range(0, CurrentFood.Count);
+            food = CurrentFood[number];
+        }
         return food;
     }
     // Funkcja do pobierania iloœci danego przedmiotu w ekwipunku
