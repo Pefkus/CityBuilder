@@ -163,10 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e006d2ea7592143a4bf75cc7ce5482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  CostsOfResources: 96000000c8000000
+  CostsOfResources: 2c010000
   WhatResourcesNeedToBuild:
   - {fileID: 1542653592078830858, guid: 85ce90619c83c3945827bafec97ba5bf, type: 3}
-  - {fileID: 7062008708194500870, guid: e47bb37f038f01f4eabaa1e3dc3282f9, type: 3}
   BuildingSize: 1
   MainBuilding: 0
   BuildingRadius: 6
@@ -192,6 +191,7 @@ MonoBehaviour:
   Cost: 0
   amoutOfItemProdusing: 0
   PopUp: {fileID: 1876300791191131365, guid: 83db28035b1396c4a8af9cdbdd047cd3, type: 3}
+  ItsUi: 0
 --- !u!61 &-7496202678886316444
 BoxCollider2D:
   m_ObjectHideFlags: 0

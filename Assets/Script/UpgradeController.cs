@@ -11,12 +11,12 @@ public class UpgradeController : MonoBehaviour
     public GameObject[] panels;
     float timerForStone;
     public float StoneSpeed;
-    
     float timerForWood;
     public float WoodSpeed;
 
     float timerForBerries;
     public float BerriesSpeed;
+    public int MoreCost = 0;
     private void Start()
     {
         Instance = this;
@@ -55,4 +55,5 @@ public class UpgradeController : MonoBehaviour
         }
 
     }
+    
 }

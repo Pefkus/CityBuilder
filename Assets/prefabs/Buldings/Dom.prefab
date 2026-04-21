@@ -162,9 +162,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e006d2ea7592143a4bf75cc7ce5482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  CostsOfResources: 32000000
+  CostsOfResources: 6400000032000000
   WhatResourcesNeedToBuild:
   - {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
+  - {fileID: 7062008708194500870, guid: e47bb37f038f01f4eabaa1e3dc3282f9, type: 3}
   BuildingSize: 1
   MainBuilding: 0
   BuildingRadius: 0

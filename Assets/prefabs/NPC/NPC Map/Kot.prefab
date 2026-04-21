@@ -127,7 +127,6 @@ GameObject:
   - component: {fileID: 1194930448538805026}
   - component: {fileID: 6137688880944969620}
   - component: {fileID: 814576873965464097}
-  - component: {fileID: 6951960409911145188}
   m_Layer: 0
   m_Name: Kot
   m_TagString: NPC
@@ -144,7 +143,7 @@ Transform:
   m_GameObject: {fileID: 5170004228522405020}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.638, y: 0, z: 0}
+  m_LocalPosition: {x: 0.56948566, y: -0.0628, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -237,11 +236,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   FavoriteFood: {fileID: 0}
-  AmountOfEat: 1
   HardWorking: 0
-  Mad: 0
   Happines: 100
-  EatTimer: 10
+  Mad: 0
+  Happy: 0
+  AmountOfHunger: 1.25
+  TimerToEat: 10
 --- !u!114 &814576873965464097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,16 +264,3 @@ MonoBehaviour:
     m_Bits: 16
   minWaitTime: 0
   maxWaitTime: 3
---- !u!114 &6951960409911145188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5170004228522405020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08436fedc8f1abf449cb3a7302f2004d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  Npc: []

@@ -162,14 +162,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e006d2ea7592143a4bf75cc7ce5482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  CostsOfResources: 3200000064000000
+  CostsOfResources: 64000000
   WhatResourcesNeedToBuild:
   - {fileID: 1542653592078830858, guid: 85ce90619c83c3945827bafec97ba5bf, type: 3}
-  - {fileID: 7062008708194500870, guid: e47bb37f038f01f4eabaa1e3dc3282f9, type: 3}
   BuildingSize: 1
   MainBuilding: 0
   BuildingRadius: 0
-  BuildingsPrefabs: []
+  BuildingsPrefabs: {fileID: 0}
+  LineRenderer: {fileID: 0}
   Description: 
 --- !u!61 &-7496202678886316444
 BoxCollider2D:
@@ -259,3 +259,4 @@ MonoBehaviour:
   boostAmount: 0.5
   detectionRadius: 3.5
   ColectingSpeedBoost: 1
+  Forspecificbuilding: {fileID: 0}

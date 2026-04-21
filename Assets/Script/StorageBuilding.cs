@@ -10,7 +10,7 @@ public class StorageBuilding : MonoBehaviour
         if(GetComponent<TypeOfBuilding>() != null && !GetComponent<TypeOfBuilding>().MainBuilding)
         {
             FoodController.Instance.ChangeMaxFoodAmount(AditionalFoodStorage);
-            FoodController.Instance.MaxPeopleStorage += MaxPeopleStorage;
+            NPCController.Instance.MaxPeopleStorage += MaxPeopleStorage;
         }
     }
 

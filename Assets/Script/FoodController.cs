@@ -6,7 +6,6 @@ public class FoodController : MonoBehaviour
     public static FoodController Instance { get; private set; }
     [Header("Food Settings in kgs")]
     public int MaxFoodAmount;
-    public int MaxPeopleStorage;
     public Slider FoodSlider;
 
     void Awake()
@@ -24,7 +23,6 @@ public class FoodController : MonoBehaviour
                 if (Mainbuilding.GetComponent<StorageBuilding>() != null)
                 {
                     MaxFoodAmount = Mainbuilding.GetComponent<StorageBuilding>().AditionalFoodStorage;
-                    MaxPeopleStorage = Mainbuilding.GetComponent<StorageBuilding>().MaxPeopleStorage;
                     FoodSlider.maxValue = MaxFoodAmount;
                     break;
                 }
@@ -77,9 +75,7 @@ public class FoodController : MonoBehaviour
             InventoryManager.Instance.ChangeValueOfItemInInventory(food, -CorrectUnitOfFood);
         }
     }
-    public void ChangePeopleStorage(int storage) {  
-        MaxPeopleStorage += storage;
-    }
+    
     public void ChangevalueSlider()
     {
         float amonut = 0;

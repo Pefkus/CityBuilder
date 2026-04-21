@@ -801,6 +801,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695d92b3744f05542b9ee1aa4e3c544e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  kociSpawner: {fileID: 0}
+  text: {fileID: 92143384}
+  Cost: 25
+  WhatItemNeed: {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
 --- !u!1 &40678699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2632,6 +2636,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695d92b3744f05542b9ee1aa4e3c544e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  kociSpawner: {fileID: 0}
+  text: {fileID: 2076018842}
+  Cost: 50
+  WhatItemNeed: {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
 --- !u!1 &200206558
 GameObject:
   m_ObjectHideFlags: 0
@@ -3532,7 +3540,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 562491896}
-  - {fileID: 1953156053}
   m_Father: {fileID: 784360509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &310158638
@@ -5588,18 +5595,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 709699328}
-        m_TargetAssemblyTypeName: KociSpawner, Assembly-CSharp
-        m_MethodName: DodajNowegoKota
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 474256338}
         m_TargetAssemblyTypeName: Upgrader, Assembly-CSharp
         m_MethodName: MoreCatBonusForPanel
@@ -5662,6 +5657,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695d92b3744f05542b9ee1aa4e3c544e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  kociSpawner: {fileID: 474256339}
+  text: {fileID: 1342723407}
+  Cost: 50
+  WhatItemNeed: {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
 --- !u!114 &474256339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6924,6 +6923,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534419007}
   m_CullTransparentMesh: 1
+--- !u!1 &555335480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4884808520668008891, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+  m_PrefabInstance: {fileID: 2091178165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &555972763
 GameObject:
   m_ObjectHideFlags: 0
@@ -7257,18 +7261,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 565386777}
-        m_TargetAssemblyTypeName: KociSpawner, Assembly-CSharp
-        m_MethodName: DodajNowegoKota
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 565386781}
         m_TargetAssemblyTypeName: Upgrader, Assembly-CSharp
         m_MethodName: MoreCatBonusForPanel
@@ -7331,6 +7323,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695d92b3744f05542b9ee1aa4e3c544e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  kociSpawner: {fileID: 565386777}
+  text: {fileID: 1697049116}
+  Cost: 50
+  WhatItemNeed: {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
 --- !u!1 &574823866
 GameObject:
   m_ObjectHideFlags: 0
@@ -11052,6 +11048,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695d92b3744f05542b9ee1aa4e3c544e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  kociSpawner: {fileID: 0}
+  text: {fileID: 2133218578}
+  Cost: 100
+  WhatItemNeed: {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
 --- !u!1 &915474306
 GameObject:
   m_ObjectHideFlags: 0
@@ -14416,7 +14416,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 196883258}
+      - m_Target: {fileID: 1173232769}
         m_TargetAssemblyTypeName: Upgrader, Assembly-CSharp
         m_MethodName: CatSpeedBonus
         m_Mode: 3
@@ -14478,6 +14478,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695d92b3744f05542b9ee1aa4e3c544e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  kociSpawner: {fileID: 0}
+  text: {fileID: 295780974}
+  Cost: 50
+  WhatItemNeed: {fileID: 1680948049756902282, guid: f6c36d073fb06fe42b15094fceb0ae0c, type: 3}
 --- !u!1 &1176684558
 GameObject:
   m_ObjectHideFlags: 0
@@ -14852,6 +14856,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695d92b3744f05542b9ee1aa4e3c544e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  kociSpawner: {fileID: 0}
+  text: {fileID: 502363548}
+  Cost: 25
+  WhatItemNeed: {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
 --- !u!1 &1215868185
 GameObject:
   m_ObjectHideFlags: 0
@@ -16526,6 +16534,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695d92b3744f05542b9ee1aa4e3c544e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  kociSpawner: {fileID: 0}
+  text: {fileID: 1537294412}
+  Cost: 25
+  WhatItemNeed: {fileID: 1680948049756902282, guid: f6c36d073fb06fe42b15094fceb0ae0c, type: 3}
 --- !u!1 &1342723405
 GameObject:
   m_ObjectHideFlags: 0
@@ -17686,6 +17698,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695d92b3744f05542b9ee1aa4e3c544e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  kociSpawner: {fileID: 0}
+  text: {fileID: 1896046979}
+  Cost: 100
+  WhatItemNeed: {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
 --- !u!1 &1415691480
 GameObject:
   m_ObjectHideFlags: 0
@@ -17908,18 +17924,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1428008368}
-        m_TargetAssemblyTypeName: KociSpawner, Assembly-CSharp
-        m_MethodName: DodajNowegoKota
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1428008372}
         m_TargetAssemblyTypeName: Upgrader, Assembly-CSharp
         m_MethodName: MoreCatBonusForPanel
@@ -17982,6 +17986,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695d92b3744f05542b9ee1aa4e3c544e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  kociSpawner: {fileID: 1428008368}
+  text: {fileID: 1106408993}
+  Cost: 50
+  WhatItemNeed: {fileID: 1680948049756902282, guid: f6c36d073fb06fe42b15094fceb0ae0c, type: 3}
 --- !u!1 &1429043213
 GameObject:
   m_ObjectHideFlags: 0
@@ -20141,7 +20149,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7570751148348826596, guid: 7e028c711fa518e44874755b6cdbde23, type: 3}
       propertyPath: BuildingRadius
-      value: 12
+      value: 19.5
       objectReference: {fileID: 0}
     - target: {fileID: 6164748612352016119, guid: 7e028c711fa518e44874755b6cdbde23, type: 3}
       propertyPath: m_Name
@@ -23592,68 +23600,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915335630}
   m_CullTransparentMesh: 1
---- !u!1001 &1953156052
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 310158637}
-    m_Modifications:
-    - target: {fileID: 5170004228522405020, guid: 05a010733849b0746b863e36799a6536, type: 3}
-      propertyPath: m_Name
-      value: Kot
-      objectReference: {fileID: 0}
-    - target: {fileID: 5203915257165611587, guid: 05a010733849b0746b863e36799a6536, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.56948566
-      objectReference: {fileID: 0}
-    - target: {fileID: 5203915257165611587, guid: 05a010733849b0746b863e36799a6536, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.0628
-      objectReference: {fileID: 0}
-    - target: {fileID: 5203915257165611587, guid: 05a010733849b0746b863e36799a6536, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5203915257165611587, guid: 05a010733849b0746b863e36799a6536, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5203915257165611587, guid: 05a010733849b0746b863e36799a6536, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5203915257165611587, guid: 05a010733849b0746b863e36799a6536, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5203915257165611587, guid: 05a010733849b0746b863e36799a6536, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5203915257165611587, guid: 05a010733849b0746b863e36799a6536, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5203915257165611587, guid: 05a010733849b0746b863e36799a6536, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5203915257165611587, guid: 05a010733849b0746b863e36799a6536, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 05a010733849b0746b863e36799a6536, type: 3}
---- !u!4 &1953156053 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5203915257165611587, guid: 05a010733849b0746b863e36799a6536, type: 3}
-  m_PrefabInstance: {fileID: 1953156052}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1967547163
 GameObject:
   m_ObjectHideFlags: 0
@@ -23877,7 +23823,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 196883258}
+      - m_Target: {fileID: 1975176770}
         m_TargetAssemblyTypeName: Upgrader, Assembly-CSharp
         m_MethodName: CatSpeedBonus
         m_Mode: 3
@@ -23939,6 +23885,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695d92b3744f05542b9ee1aa4e3c544e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  kociSpawner: {fileID: 0}
+  text: {fileID: 1662674443}
+  Cost: 50
+  WhatItemNeed: {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
 --- !u!1 &1982826097
 GameObject:
   m_ObjectHideFlags: 0
@@ -24947,12 +24897,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2075752162}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+        m_TargetAssemblyTypeName: Upgrader, Assembly-CSharp
+        m_MethodName: CreateNewNPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -24970,6 +24920,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695d92b3744f05542b9ee1aa4e3c544e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  kociSpawner: {fileID: 0}
+  text: {fileID: 1048179046}
+  Cost: 100
+  WhatItemNeed: {fileID: 1680948049756902282, guid: f6c36d073fb06fe42b15094fceb0ae0c, type: 3}
 --- !u!1 &2076018840
 GameObject:
   m_ObjectHideFlags: 0
@@ -25718,19 +25672,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4884808520668008891, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2091178174}
   m_SourcePrefab: {fileID: 100100000, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
 --- !u!114 &2091178166 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
   m_PrefabInstance: {fileID: 2091178165}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 555335480}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6448efeca17fef428a6d75110d3cd6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &2091178174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555335480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08436fedc8f1abf449cb3a7302f2004d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCController
+  NewNpc: {fileID: 5170004228522405020, guid: 05a010733849b0746b863e36799a6536, type: 3}
+  Npc: []
+  MaxPeopleStorage: 2
+  Mapa: {fileID: 310158638}
 --- !u!1 &2091411789
 GameObject:
   m_ObjectHideFlags: 0
