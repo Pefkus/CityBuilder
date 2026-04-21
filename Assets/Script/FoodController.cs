@@ -65,6 +65,7 @@ public class FoodController : MonoBehaviour
         if (FoodSlider.value <= MaxFoodAmount * 0.25f)
         {
             FoodSlider.fillRect.GetComponent<Image>().color = Color.red;
+            
         }
         else if (FoodSlider.value <= MaxFoodAmount * 0.5f)
         {

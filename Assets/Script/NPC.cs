@@ -30,31 +30,41 @@ public class NPC : MonoBehaviour
             }
             else
             {
-                bool HaveFood = true;
-                foreach(GameObject item in Inventory.itemsInInventory)
-                {
-                    if(item.CompareTag("Food") && Inventory.GetValueOfItemInInventory(item) > 0)
-                    {
-                        FoodController.EatTheFood(AmountOfEat, item);
-                        HaveFood = true;
-                        break;
-                    }
-                    else
-                    {
-                        HaveFood = false;
-                    }
-                }
-                if (HaveFood)
-                {
-                    ChanageHappines(-1);
-                }
-                else
-                {
-                    ChanageHappines(-2);
-                }
+                SearchForFood();
             }
         }
+        else
+        {
+            SearchForFood();
+        }
     }
+    //Wyszukaj jedzenie z inevenmtory jakie posaida jesli niema ¿adnego zmniejsz happines
+    void SearchForFood()
+    {
+        bool HaveFood = true;
+        foreach (GameObject item in Inventory.itemsInInventory)
+        {
+            if (item.CompareTag("Food") && Inventory.GetValueOfItemInInventory(item) > 0)
+            {
+                FoodController.EatTheFood(AmountOfEat, item);
+                HaveFood = true;
+                break;
+            }
+            else
+            {
+                HaveFood = false;
+            }
+        }
+        if (HaveFood)
+        {
+            ChanageHappines(-1);
+        }
+        else
+        {
+            ChanageHappines(-2);
+        }
+    }
+
     private void Update()
     {
         if (FavoriteFood == null)

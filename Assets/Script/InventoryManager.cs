@@ -48,10 +48,17 @@ public class InventoryManager : MonoBehaviour
     }
     public GameObject GetRandomItemFood()
     {
-        GameObject food = null; 
-        int number = Random.Range(0,Food.Count);
-        
-            food = Food[number];
+        List<GameObject> CurrentFood = new List<GameObject>();
+        GameObject food = null;
+        foreach (GameObject item in Food)
+        {
+            if(GetValueOfItemInInventory(item) > 0)
+            {
+                CurrentFood.Add(item);
+            }
+        }
+        int number = Random.Range(0, CurrentFood.Count);
+        food = Food[number];
         
         return food;
     }
