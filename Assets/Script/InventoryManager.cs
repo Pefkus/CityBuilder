@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 public class InventoryManager : MonoBehaviour
 {
     // Singleton, ¿eby mieæ ³atwy dostêp do ekwipunku z ka¿dego miejsca
@@ -16,10 +17,11 @@ public class InventoryManager : MonoBehaviour
     // Lista iloœci ka¿dego przedmiotu w ekwipunku, indeks odpowiada indeksowi w itemsInInventory
     public List<int> amountOfItemsInInventory = new List<int>();
 
+    public List<GameObject> Food = new List<GameObject>();
+
     private void Awake()
     {
         Instance = this;
-        DontDestroyOnLoad(this.gameObject);
     }
     private void Start()
     {
@@ -36,6 +38,22 @@ public class InventoryManager : MonoBehaviour
             slot.GetComponentInChildren<TextMeshProUGUI>().enabled = false;
             index++;
         }
+        foreach (GameObject item in itemsInInventory)
+        {
+            if(item.CompareTag("Food"))
+            {
+                Food.Add(item);
+            }
+        }
+    }
+    public GameObject GetRandomItemFood()
+    {
+        GameObject food = null; 
+        int number = Random.Range(0,Food.Count);
+        
+            food = Food[number];
+        
+        return food;
     }
     // Funkcja do pobierania iloœci danego przedmiotu w ekwipunku
     public int GetValueOfItemInInventory(GameObject name)

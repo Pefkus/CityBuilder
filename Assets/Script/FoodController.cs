@@ -9,7 +9,6 @@ public class FoodController : MonoBehaviour
     public int MaxPeopleStorage;
     public Slider FoodSlider;
 
-    float timer = 0f;
     void Awake()
     {
         Instance = this;
@@ -61,7 +60,7 @@ public class FoodController : MonoBehaviour
 
 
     // Funkcja do zmiany koloru suwaka w zale¿noœci od aktualnej iloœci jedzenia, ¿eby ³atwiej by³o zobaczyæ, kiedy zaczyna go brakowaæ
-    void ChangeSliderColor()
+    void ChangeSlider()
     {
         if (FoodSlider.value <= MaxFoodAmount * 0.25f)
         {
@@ -77,19 +76,15 @@ public class FoodController : MonoBehaviour
         }
 
     }
-    // Funkcja do jedzenia jedzenia, która sprawdza, czy jest wystarczaj¹co jedzenia w suwaku, a nastêpnie szuka pierwszego przedmiotu z tagiem "Food" w ekwipunku i odejmuje z niego okreœlon¹ iloœæ, a tak¿e zmienia iloœæ jedzenia w suwaku
-    void EatTheFood(int amount)
+    // Funkcja do jedzenia jedzenia, która sprawdza, czy jest wystarczaj¹co jedzenia w suwaku, a nastêpnie szuka przedmiotu z tagiem "Food" w ekwipunku i odejmuje z niego okreœlon¹ iloœæ, a tak¿e zmienia iloœæ jedzenia w suwaku
+    public void EatTheFood(int amount, GameObject food)
     {
         if (FoodSlider.value > 0)
         {
-            foreach(GameObject food in InventoryManager.Instance.itemsInInventory)
+            if (food.CompareTag("Food") && InventoryManager.Instance.GetValueOfItemInInventory(food) > 0)
             {
-                if (food.CompareTag("Food") && InventoryManager.Instance.GetValueOfItemInInventory(food) > 0)
-                {
-                    InventoryManager.Instance.ChangeValueOfItemInInventory(food, -amount);
-                    ChangeFoodAmount(-amount, food);
-                    break;
-                }
+                InventoryManager.Instance.ChangeValueOfItemInInventory(food, -amount);
+                ChangeFoodAmount(-amount, food);
             }
         }
     }
@@ -101,12 +96,6 @@ public class FoodController : MonoBehaviour
     }
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= 1f)
-        {
-            timer = 0f;
-            EatTheFood(1);
-        }
-        ChangeSliderColor();
+        ChangeSlider();
     }
 }

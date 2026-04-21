@@ -12,6 +12,7 @@ TagManager:
   - UIComponentBulding
   - Food
   - UiComponentButton
+  - NPC
   layers:
   - Default
   - TransparentFX
