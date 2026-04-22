@@ -86,7 +86,6 @@ public class Upgrader : MonoBehaviour
                     UpgradeController.Instance.StoneSpeed += 0.5f;
                     break;
                 case 2:
-                    Debug.Log("Klik");
                     UpgradeController.Instance.BerriesSpeed += 0.5f;
                     break;
             }
