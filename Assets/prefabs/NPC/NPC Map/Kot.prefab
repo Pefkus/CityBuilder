@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1268367401258631807, guid: c72932ea68255b34ea4c60d9339b6169, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -236,7 +236,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   FavoriteFood: {fileID: 0}
+  Building: {fileID: 0}
   HardWorking: 0
+  speed: 1
   Happines: 100
   Mad: 0
   Happy: 0
@@ -264,3 +266,4 @@ MonoBehaviour:
     m_Bits: 16
   minWaitTime: 0
   maxWaitTime: 3
+  CanMove: 1

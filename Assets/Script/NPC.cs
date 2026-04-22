@@ -6,16 +6,20 @@ public class NPC : MonoBehaviour
     public GameObject FavoriteFood;
     private InventoryManager Inventory;
     private FoodController FoodController;
-    
+    [Header("Praca")]
+    public GameObject Building;
     public bool HardWorking = false;
+    public float speed = 1f;
     [Header("Samopoczucie")]
     public float Happines = 100f;
     public bool Mad = false;
     public bool Happy = false;
     [Header("G³ód")]
     float timer = 0f;
+    float WorkinTimer = 0f;
     public float AmountOfHunger = 1.25f;
     public float TimerToEat = 10f;
+    
     private void Start()
     {
         AmountOfHunger = Random.Range(1f, 3f);
@@ -103,6 +107,7 @@ public class NPC : MonoBehaviour
     }
     private void Update()
     {
+        
         if (FavoriteFood == null)
         {
             FavoriteFood = Inventory.GetRandomItemFood();
@@ -127,7 +132,23 @@ public class NPC : MonoBehaviour
             movment.moveSpeed = 4.5f;
             movment.maxWaitTime = 3f;
         }
-
+        if (Building != null) 
+        {
+            this.gameObject.GetComponent<MovmentNPC>().enabled = false;
+            transform.position = Building.transform.position + new Vector3(0, -0.6f);
+            HardWorking = true;
+            WorkinTimer += Time.deltaTime * speed;
+            if(WorkinTimer > 2f)
+            {
+                if (Building.gameObject.GetComponent<Bulding>().isProdusingBuilding)
+                    Building.GetComponent<Bulding>().ProdusingItem(MouseController.Instance.ClickBonus);
+                WorkinTimer = 0f;
+            }
+        }
+        else
+        {
+            HardWorking = false;    
+        }
     }
     float ChangeEatTimer(float Cut)
     {
@@ -135,7 +156,7 @@ public class NPC : MonoBehaviour
         float speed = 3f;
         if (HardWorking)
         {
-            speed = 2f;
+            speed = 1.5f;
         }
         if (Mad)
         {
@@ -179,7 +200,10 @@ public class NPC : MonoBehaviour
             {
                 Happines = 100;
             }
-
+            if(Happines >= 80)
+            {
+                speed = 2;
+            }
             Mad = false;
             
         }

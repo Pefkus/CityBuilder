@@ -7,10 +7,14 @@ public class MouseController : MonoBehaviour
     public static MouseController Instance { get; private set; }
 
     Camera mainCamera;
+    public GameObject NpcCollision;
+    public GameObject GrabedNpc;
     public GameObject Collision;
     public GameObject PlacingTheBuilding;
     public bool CreatingBuilding = false;
+    public bool GrabingTheNPC = false;
     private List<GameObject> buildingsInRange = new List<GameObject>();
+    private List<GameObject> NPCInRange = new List<GameObject>();
 
     public GameObject particlesystem;
     public Transform cursorMarker;
@@ -32,6 +36,7 @@ public class MouseController : MonoBehaviour
     }
     void Update()
     {
+        DetectNpc();
         DetectCollision();
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
         {
@@ -116,24 +121,33 @@ public class MouseController : MonoBehaviour
         {
             if (!CreatingBuilding)
             {
-                // Jeœli nie tworzymy budynku i klikniemy, to sprawdzamy, czy mo¿emy klikn¹æ w budynek (czy jest jakiœ w kolizji) i jeœli tak, to klikamy w niego co sekundê
-                if (timer >= baseInterval)
+                if (GrabingTheNPC)
                 {
-                    if (Collision != null)
-                    {
-                        if (Collision.gameObject.CompareTag("Bulding"))
-                        {
-                            if(Collision.gameObject.GetComponent<Bulding>() != null)
-                            {
-                                if (Collision.gameObject.GetComponent<Bulding>().isProdusingBuilding)
-                                    Collision.gameObject.GetComponent<Bulding>().ProdusingItem(ClickBonus);
-                            }
-                            
-                        }
-                        Collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("Click");
-                    }
-                    timer = 0f; // Resetujemy licznik
+                    PutTheNpc();
                 }
+                else
+                {
+                    // Jeœli nie tworzymy budynku i klikniemy, to sprawdzamy, czy mo¿emy klikn¹æ w budynek (czy jest jakiœ w kolizji) i jeœli tak, to klikamy w niego co sekundê
+                    if (timer >= baseInterval)
+                    {
+                        if (Collision != null)
+                        {
+                            if (Collision.gameObject.CompareTag("Bulding"))
+                            {
+                                if (Collision.gameObject.GetComponent<Bulding>() != null)
+                                {
+                                    if (Collision.gameObject.GetComponent<Bulding>().isProdusingBuilding)
+                                        Collision.gameObject.GetComponent<Bulding>().ProdusingItem(ClickBonus);
+                                }
+
+                            }
+                            Collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("Click");
+                        }
+
+                        timer = 0f; // Resetujemy licznik
+                    }
+                }
+                
             }
             else
             {
@@ -151,6 +165,61 @@ public class MouseController : MonoBehaviour
                 
             
         }
+        if (Input.GetMouseButton(1))
+        {
+            if (!CreatingBuilding && !GrabingTheNPC)
+            {
+                if (NpcCollision != null)
+                {
+                    GrabTheNpc();
+                }
+            }
+        }
+        if (GrabingTheNPC)
+        {
+            GrabedNpc.transform.position = this.transform.position;
+        }
+    }
+    void GrabTheNpc()
+    {
+        if (NpcCollision != null)
+        {
+            GrabedNpc = NpcCollision;
+            GrabedNpc.GetComponent<NPC>().HardWorking = false;
+            GrabedNpc.GetComponent<NPC>().Building = null;
+            GrabedNpc.GetComponent<MovmentNPC>().enabled = false;
+            GrabingTheNPC = true;
+            GrabedNpc.transform.SetParent(this.transform);
+            
+        }
+    }
+    void PutTheNpc()
+    {
+        if (GrabedNpc != null) 
+        {
+            if (Collision != null)
+            {
+                if (Collision.CompareTag("Bulding") && Collision.GetComponent<Bulding>() != null)
+                {
+                    GrabedNpc.transform.SetParent(Collision.transform);
+                    GrabedNpc.GetComponent<NPC>().Building = Collision;
+                    GrabingTheNPC = false;
+                    GrabedNpc = null;
+                }
+            }
+            else
+            {
+                if (NPCController.Instance.CheckTile())
+                {
+                    GrabedNpc.transform.SetParent(myGrid.transform);
+                    GrabedNpc.GetComponent<MovmentNPC>().enabled = true;
+                    GrabingTheNPC = false;
+                    GrabedNpc = null;
+                }
+            }
+           
+        }
+
     }
     // Ta funkcja wykrywa kolizje z budynkami i aktualizuje listê budynków w zasiêgu oraz aktualny obiekt kolizji
     void DetectCollision()
@@ -176,6 +245,7 @@ public class MouseController : MonoBehaviour
                     Collision = building;
                 }
             }
+            
         }
 
         List<GameObject> toRemove = new List<GameObject>();
@@ -193,6 +263,49 @@ public class MouseController : MonoBehaviour
             if (Collision == building)
             {
                 Collision = null;
+            }
+        }
+    }
+    void DetectNpc()
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(BoxCollider2D.bounds.center, BoxCollider2D.bounds.size, 0f);
+        HashSet<GameObject> currentlyDetected = new HashSet<GameObject>();
+
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("NPC"))
+            {
+                if (hitCollider.gameObject == GrabedNpc)
+                {
+                    continue;
+                }
+                GameObject Npc = hitCollider.gameObject;
+                currentlyDetected.Add(Npc);
+
+                // Odpowiednik OnEnter: Jeœli nie by³o go wczeœniej, a jest teraz
+                if (!NPCInRange.Contains(Npc))
+                {
+                    NPCInRange.Add(Npc);
+                    NpcCollision = Npc;
+                }
+            }
+        }
+
+        List<GameObject> toRemove = new List<GameObject>();
+        foreach (var Npc in NPCInRange)
+        {
+            if (!currentlyDetected.Contains(Npc))
+            {
+                toRemove.Add(Npc);
+            }
+        }
+
+        foreach (var Npc in toRemove)
+        {
+            NPCInRange.Remove(Npc);
+            if (NpcCollision == Npc)
+            {
+                NpcCollision = null;
             }
         }
     }

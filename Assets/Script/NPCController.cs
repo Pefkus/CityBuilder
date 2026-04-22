@@ -9,6 +9,7 @@ public class NPCController : MonoBehaviour
     public int MaxPeopleStorage = 2;
     GameObject mainBuilding;
     public Grid Mapa;
+    public LayerMask NpcLayerMask;
     void Start()
     {
         Instance = this;
@@ -65,5 +66,23 @@ public class NPCController : MonoBehaviour
         }
 
     }
+    public bool CheckTile()
+    {
+        Vector3Int tileCoords = MouseController.Instance.cellPosition;
+        Vector3 cellWorldPos = Mapa.GetCellCenterWorld(tileCoords);
 
+        // 2. Wykonaj test punktowy na konkretnej masce bitowej
+        Collider2D[] hit = Physics2D.OverlapBoxAll(cellWorldPos, new Vector2(0.5f, 0.5f), 0, NpcLayerMask);
+        if (hit != null)
+        {
+            foreach (Collider2D collider in hit)
+            {
+                if (collider != null)
+                {
+                    return true ;
+                }
+            }
+        }
+        return false;
+    }
 }

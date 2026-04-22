@@ -49,36 +49,39 @@ public class MovmentNPC : MonoBehaviour
 
     private void TryMove()
     {
-        float rGridSize = Random.Range(1, MaxGridSize);
-        Vector2 randomDir = directions[Random.Range(0, directions.Length)];
-        Vector2 targetPos = (Vector2)transform.position + (randomDir * rGridSize);
+            float rGridSize = Random.Range(1, MaxGridSize);
+            Vector2 randomDir = directions[Random.Range(0, directions.Length)];
+            Vector2 targetPos = (Vector2)transform.position + (randomDir * rGridSize);
 
+
+            // Dla ruchu prosto wyniesie ona 1 * gridSize.
+            // Dla ruchu na skos wyniesie ok. 1.41 * gridSize.
+            float rayDistance = randomDir.magnitude * rGridSize;
+
+            // Puszczamy Raycasty u¿ywaj¹c nowej odleg³oœci
+            RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, randomDir, rayDistance, obstacleLayers);
+            RaycastHit2D walkableHit = Physics2D.Raycast(transform.position, randomDir, rayDistance, walkableLayers);
+
+            if (obstacleHit.collider == null && walkableHit.collider != null)
+            {
+                StartCoroutine(MoveToGridPosition(targetPos));
+            }
         
-        // Dla ruchu prosto wyniesie ona 1 * gridSize.
-        // Dla ruchu na skos wyniesie ok. 1.41 * gridSize.
-        float rayDistance = randomDir.magnitude * rGridSize;
-
-        // Puszczamy Raycasty u¿ywaj¹c nowej odleg³oœci
-        RaycastHit2D obstacleHit = Physics2D.Raycast(transform.position, randomDir, rayDistance, obstacleLayers);
-        RaycastHit2D walkableHit = Physics2D.Raycast(transform.position, randomDir, rayDistance, walkableLayers);
-
-        if (obstacleHit.collider == null && walkableHit.collider != null)
-        {
-            StartCoroutine(MoveToGridPosition(targetPos));
-        }
     }
 
     private IEnumerator MoveToGridPosition(Vector2 target)
     {
-        isMoving = true;
 
-        while (Vector2.Distance(transform.position, target) > 0.01f)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
-            yield return null;
-        }
+            isMoving = true;
 
-        transform.position = target;
-        isMoving = false;
+            while (Vector2.Distance(transform.position, target) > 0.01f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+                yield return null;
+            }
+
+            transform.position = target;
+            isMoving = false;
+        
     }
 }
