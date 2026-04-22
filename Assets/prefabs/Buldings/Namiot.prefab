@@ -257,4 +257,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   MaxPeopleStorage: 1
-  AditionalFoodStorage: 10
+  AditionalFoodStorage: 100

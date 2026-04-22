@@ -11,9 +11,13 @@ public class NPCController : MonoBehaviour
     GameObject mainBuilding;
     public Grid Mapa;
     public LayerMask NpcLayerMask;
-    void Start()
+    private void Awake()
     {
         Instance = this;
+    }
+    void Start()
+    {
+        
         GameObject[] BuildingsOnMap = GameObject.FindGameObjectsWithTag("Bulding");
         foreach (GameObject Mainbuilding in BuildingsOnMap)
         {

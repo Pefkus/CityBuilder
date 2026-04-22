@@ -9,6 +9,7 @@ public class MainBuilding : MonoBehaviour
     public int People = 2;
     private void Start()
     {
+        AditionalChange();
         LevelOfBuilding = 1;
     }
     private void Update()
