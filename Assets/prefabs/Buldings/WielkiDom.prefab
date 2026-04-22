@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7499271843934987772, guid: 51b7d6972e2ea124e98d345b267da4a3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b8c16a7b4dfc73743979b23efa08a94e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 3774714470394484737}
   - component: {fileID: 2281093432343278107}
   m_Layer: 6
-  m_Name: Dom
+  m_Name: WielkiDom
   m_TagString: Bulding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,12 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e006d2ea7592143a4bf75cc7ce5482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  CostsOfResources: 4b000000320000003200000014000000
+  CostsOfResources: 6400000064000000c8000000
   WhatResourcesNeedToBuild:
-  - {fileID: 1542653592078830858, guid: 85ce90619c83c3945827bafec97ba5bf, type: 3}
-  - {fileID: 7062008708194500870, guid: e47bb37f038f01f4eabaa1e3dc3282f9, type: 3}
-  - {fileID: 1617651943656758187, guid: 31abcb0ba22b0ae4997c141fc8361f7e, type: 3}
+  - {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
   - {fileID: 2382671024165135040, guid: 752bad810d480334097b09d31db97445, type: 3}
+  - {fileID: 1617651943656758187, guid: 31abcb0ba22b0ae4997c141fc8361f7e, type: 3}
   BuildingSize: 1
   MainBuilding: 0
   BuildingRadius: 0
@@ -259,5 +258,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95cd93abc6fb5c94b87ea7801bce6829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  MaxPeopleStorage: 1
-  AditionalFoodStorage: 200
+  MaxPeopleStorage: 4
+  AditionalFoodStorage: 300

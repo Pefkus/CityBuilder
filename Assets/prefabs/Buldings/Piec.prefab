@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e006d2ea7592143a4bf75cc7ce5482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  CostsOfResources: 640000003200000014000000
+  CostsOfResources: 1e0000003200000014000000
   WhatResourcesNeedToBuild:
   - {fileID: 1617651943656758187, guid: 31abcb0ba22b0ae4997c141fc8361f7e, type: 3}
   - {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
@@ -170,7 +170,8 @@ MonoBehaviour:
   BuildingSize: 1
   MainBuilding: 0
   BuildingRadius: 0
-  BuildingsPrefabs: []
+  BuildingsPrefabs: {fileID: 0}
+  LineRenderer: {fileID: 0}
   Description: 
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
@@ -192,6 +193,7 @@ MonoBehaviour:
   Cost: 10
   amoutOfItemProdusing: 2
   PopUp: {fileID: 1876300791191131365, guid: 83db28035b1396c4a8af9cdbdd047cd3, type: 3}
+  ItsUi: 0
 --- !u!61 &-7496202678886316444
 BoxCollider2D:
   m_ObjectHideFlags: 0
