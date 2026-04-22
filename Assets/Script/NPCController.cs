@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
-    public GameObject NewNpc;
     public static NPCController Instance;
+
+    public GameObject NewNpc;
     public List<GameObject> Npc = new List<GameObject>();
     public int MaxPeopleStorage = 2;
     GameObject mainBuilding;

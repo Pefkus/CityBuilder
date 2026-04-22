@@ -139,6 +139,14 @@ public class MouseController : MonoBehaviour
                                     if (Collision.gameObject.GetComponent<Bulding>().isProdusingBuilding)
                                         Collision.gameObject.GetComponent<Bulding>().ProdusingItem(ClickBonus);
                                 }
+                                else
+                                {
+                                    if (Collision.gameObject.GetComponent<MainBuilding>() != null)
+                                    {
+                                        Collision.gameObject.GetComponent<MainBuilding>().LevelOfBuilding++;
+                                        Collision.gameObject.GetComponent<MainBuilding>().AditionalChange();
+                                    }
+                                }
 
                             }
                             Collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("Click");

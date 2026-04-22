@@ -2717,6 +2717,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200206558}
   m_CullTransparentMesh: 1
+--- !u!212 &215364705 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5482101989064569947, guid: 7e028c711fa518e44874755b6cdbde23, type: 3}
+  m_PrefabInstance: {fileID: 1581644927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &216412634
 GameObject:
   m_ObjectHideFlags: 0
@@ -20195,10 +20200,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6164748612352016119, guid: 7e028c711fa518e44874755b6cdbde23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1959964796}
+    - targetCorrespondingSourceObject: {fileID: 6164748612352016119, guid: 7e028c711fa518e44874755b6cdbde23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1959964797}
   m_SourcePrefab: {fileID: 100100000, guid: 7e028c711fa518e44874755b6cdbde23, type: 3}
 --- !u!4 &1581644928 stripped
 Transform:
@@ -23603,6 +23615,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915335630}
   m_CullTransparentMesh: 1
+--- !u!1 &1959964791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6164748612352016119, guid: 7e028c711fa518e44874755b6cdbde23, type: 3}
+  m_PrefabInstance: {fileID: 1581644927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1959964796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959964791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae09ec325d6177d4c87c7599a830d60c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  MainSprite: {fileID: 215364705}
+  Sprites:
+  - {fileID: 21300000, guid: 40f67332ba817884f93e46b3f88f5e27, type: 3}
+  - {fileID: 21300000, guid: 3e4b6df96e2e8f44387bca6cd4ce2e2d, type: 3}
+  - {fileID: 21300000, guid: 0955d6e9097a6d14da6d8acbbb56c7df, type: 3}
+  LevelOfBuilding: 1
+  FoodAmount: 300
+  People: 2
+--- !u!114 &1959964797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959964791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95cd93abc6fb5c94b87ea7801bce6829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StorageBuilding
+  MaxPeopleStorage: 2
+  AditionalFoodStorage: 300
 --- !u!1 &1967547163
 GameObject:
   m_ObjectHideFlags: 0
