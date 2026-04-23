@@ -87,20 +87,30 @@ public class MouseController : MonoBehaviour
             {
                 if (Collision.gameObject.CompareTag("Bulding") || Collision.gameObject.CompareTag("Boosting Bulding"))
                 {
-                    if (Collision.GetComponent<TypeOfBuilding>().BuildingSize > 1)
+                    if(Collision.GetComponent<TypeOfBuilding>() != null)
                     {
-                        cursorMarkerSpriteRenderer.transform.localScale = new Vector3(2f, 2f, 1f);
-                        cursorMarker.GetComponent<BoxCollider2D>().size = new Vector2(0.75f, 0.75f);
-                        cursorMarkerSpriteRenderer.transform.position = Collision.transform.position;
-                        cursorMarker.position = myGrid.GetCellCenterWorld(cellPosition);
+                        if (Collision.GetComponent<TypeOfBuilding>().BuildingSize > 1)
+                        {
+                            cursorMarkerSpriteRenderer.transform.localScale = new Vector3(2f, 2f, 1f);
+                            cursorMarker.GetComponent<BoxCollider2D>().size = new Vector2(0.75f, 0.75f);
+                            cursorMarkerSpriteRenderer.transform.position = Collision.transform.position;
+                            cursorMarker.position = myGrid.GetCellCenterWorld(cellPosition);
 
+                        }
+                        else
+                        {
+                            cursorMarkerSpriteRenderer.transform.localScale = new Vector3(1f, 1f, 1f);
+                            cursorMarker.GetComponent<BoxCollider2D>().size = new Vector2(0.75f, 0.75f);
+                            cursorMarker.position = myGrid.GetCellCenterWorld(cellPosition);
+                            cursorMarkerSpriteRenderer.transform.position = Collision.transform.position;
+                        }
                     }
                     else
                     {
                         cursorMarkerSpriteRenderer.transform.localScale = new Vector3(1f, 1f, 1f);
                         cursorMarker.GetComponent<BoxCollider2D>().size = new Vector2(0.75f, 0.75f);
+                        cursorMarkerSpriteRenderer.transform.position = cursorMarker.position;
                         cursorMarker.position = myGrid.GetCellCenterWorld(cellPosition);
-                        cursorMarkerSpriteRenderer.transform.position = Collision.transform.position;
                     }
                 }
             }
@@ -139,14 +149,15 @@ public class MouseController : MonoBehaviour
                                     if (Collision.gameObject.GetComponent<Bulding>().isProdusingBuilding)
                                         Collision.gameObject.GetComponent<Bulding>().ProdusingItem(ClickBonus);
                                 }
-                                else
+                                else if(Collision.gameObject.GetComponent<MainBuilding>() != null)
                                 {
-                                    if (Collision.gameObject.GetComponent<MainBuilding>() != null)
-                                    {
-                                        Collision.gameObject.GetComponent<MainBuilding>().CheckItems();
-                                    }
+                                    Collision.gameObject.GetComponent<MainBuilding>().CheckItems();
+                                    
+                                } 
+                                else if(Collision.gameObject.GetComponent<ObcjectOnMap>() != null)
+                                {
+                                    Collision.gameObject.GetComponent<ObcjectOnMap>().PunchingTheObject(ClickBonus);
                                 }
-
                             }
                             Collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("Click");
                         }
