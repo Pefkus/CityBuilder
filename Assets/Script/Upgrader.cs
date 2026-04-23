@@ -44,7 +44,7 @@ public class Upgrader : MonoBehaviour
     }
     void ChangeText(int cost)
     {
-        text.text = cost.ToString() + " " + WhatItemNeed.name;
+        text.text = cost.ToString();
         text.overflowMode = TextOverflowModes.Ellipsis;
     }
 
