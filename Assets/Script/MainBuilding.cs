@@ -44,10 +44,11 @@ public class MainBuilding : MonoBehaviour
             MainSprite.sprite = Sprites[LevelOfBuilding - 1];
             FoodController.Instance.ChangeMaxFoodAmount(FoodAmount);
             NPCController.Instance.ChangePeopleStorage(People);
+            
             gameObject.GetComponent<TypeOfBuilding>().BuildingRadius = 15f * LevelOfBuilding;
             ChangeNeededItems();
         }
-        else
+        else if(LevelOfBuilding == 3) 
         {
             Canvas.SetActive(false);
         }
@@ -142,8 +143,13 @@ public class MainBuilding : MonoBehaviour
         }
         if (CanUpgrade)
         {
+            foreach (GameObject item in ItemNeededRightNow)
+            {
+                InventoryManager.Instance.ChangeValueOfItemInInventory(item, -AmountOfItemNeeded[ItemNeededRightNow.IndexOf(item)]);
+            }
             LevelOfBuilding++;
             AditionalChange();
+            UpgradeController.Instance.TokensForRebirth++;
         }
     }
 }

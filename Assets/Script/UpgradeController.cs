@@ -5,6 +5,7 @@ public class UpgradeController : MonoBehaviour
     public static UpgradeController Instance { get; private set; }
     public MouseController MouseController;
     public UICursorController UICursorController;
+    public int TokensForRebirth = 0;
     public int KotDrwal = 0;
     public int KotGórnik = 0;
     public int KotZbieracz = 0;
