@@ -44,7 +44,7 @@ public class MainBuilding : MonoBehaviour
             MainSprite.sprite = Sprites[LevelOfBuilding - 1];
             FoodController.Instance.ChangeMaxFoodAmount(FoodAmount);
             NPCController.Instance.ChangePeopleStorage(People);
-            UpgradeController.Instance.TokensForRebirth++;
+            
             gameObject.GetComponent<TypeOfBuilding>().BuildingRadius = 15f * LevelOfBuilding;
             ChangeNeededItems();
         }
@@ -149,7 +149,7 @@ public class MainBuilding : MonoBehaviour
             }
             LevelOfBuilding++;
             AditionalChange();
-            
+            UpgradeController.Instance.TokensForRebirth++;
         }
     }
 }
