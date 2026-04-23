@@ -143,8 +143,7 @@ public class MouseController : MonoBehaviour
                                 {
                                     if (Collision.gameObject.GetComponent<MainBuilding>() != null)
                                     {
-                                        Collision.gameObject.GetComponent<MainBuilding>().LevelOfBuilding++;
-                                        Collision.gameObject.GetComponent<MainBuilding>().AditionalChange();
+                                        Collision.gameObject.GetComponent<MainBuilding>().CheckItems();
                                     }
                                 }
 
