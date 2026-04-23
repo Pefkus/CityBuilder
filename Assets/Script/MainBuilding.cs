@@ -44,7 +44,7 @@ public class MainBuilding : MonoBehaviour
             MainSprite.sprite = Sprites[LevelOfBuilding - 1];
             FoodController.Instance.ChangeMaxFoodAmount(FoodAmount);
             NPCController.Instance.ChangePeopleStorage(People);
-            
+            MapGeneretor.Instance.LimitObjects += 10;
             gameObject.GetComponent<TypeOfBuilding>().BuildingRadius = 15f * LevelOfBuilding;
             ChangeNeededItems();
         }
