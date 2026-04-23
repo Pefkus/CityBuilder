@@ -229,7 +229,7 @@ public class CreatorBuildingsMenager : MonoBehaviour
                 {
                     if (hitCollider.CompareTag("Boosting Bulding"))
                     {
-                        if (hitCollider.gameObject.GetComponent<TypeOfBuilding>() != null && hitCollider.gameObject.name == MouseScrpit.PlacingTheBuilding.name)
+                        if (hitCollider.gameObject.GetComponent<TypeOfBuilding>() != null && hitCollider.gameObject == MouseScrpit.PlacingTheBuilding)
                         {
                             currentlyDetected.Add(hitCollider.gameObject);
                         }
