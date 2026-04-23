@@ -26178,6 +26178,50 @@ PrefabInstance:
       propertyPath: 'mapList.Array.data[6]'
       value: 
       objectReference: {fileID: 5669662719524586805, guid: aa953eb42911dc2408969562e7aa48ed, type: 3}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: allMapTiles.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: 'allMapTiles.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1348338417}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: objectsToSpawn.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: objectsToSpawn.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 6164748612352016119, guid: 889198f4235f2054d92dafa15d950ca2, type: 3}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: objectsToSpawn.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 6164748612352016119, guid: 800b4ff900bb3cf4a9b3e66db65002a6, type: 3}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: objectsToSpawn.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 6164748612352016119, guid: 71e436fcb50acfa4b93a88ffefed7f90, type: 3}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: objectsToSpawn.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 6164748612352016119, guid: 71e436fcb50acfa4b93a88ffefed7f90, type: 3}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: objectsToSpawn.Array.data[0].allowedSurface.m_Bits
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: objectsToSpawn.Array.data[1].allowedSurface.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: objectsToSpawn.Array.data[2].allowedSurface.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: objectsToSpawn.Array.data[3].allowedSurface.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: Tilemapy
       value: 
