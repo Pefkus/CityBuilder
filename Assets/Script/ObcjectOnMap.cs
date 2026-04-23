@@ -9,12 +9,15 @@ public class ObcjectOnMap : MonoBehaviour
     public GameObject ItemProdusing;
     public GameObject PopUp;
     public GameObject DestroyPS;
+    public GameObject ContainerForSlider;
     public Slider slider;
     void Start()
     {
-        DurabilityAmount = Random.Range(20, 50);
+        int lvl = TypesOfBuildingMenager.Instance.MainBuilding.GetComponent<MainBuilding>().LevelOfBuilding;
+        DurabilityAmount = Random.Range(10 * (lvl * lvl), 25 * (lvl * lvl));
         MaxAmountCanProduce = DurabilityAmount * 2;
         slider.maxValue = DurabilityAmount;
+        
     }
     private void Update()
     {
@@ -23,8 +26,8 @@ public class ObcjectOnMap : MonoBehaviour
     }
     public void PunchingTheObject(int Clik)
     {
+        ContainerForSlider.SetActive(true);
         DurabilityAmount += -Clik - 1;
-        slider.value = DurabilityAmount;
         if (DurabilityAmount < 0)
         {
             GiveTheItem(Clik);
@@ -32,6 +35,7 @@ public class ObcjectOnMap : MonoBehaviour
     }
     void GiveTheItem(int Boost)
     {
+        MapGeneretor.Instance.Limit--;
         InventoryManager.Instance.ChangeValueOfItemInInventory(ItemProdusing, MaxAmountCanProduce + Boost);
         CreatePopItem();
     }
@@ -47,6 +51,7 @@ public class ObcjectOnMap : MonoBehaviour
     }
     void ChangeSlider()
     {
+        slider.value = DurabilityAmount;
         if (slider.value <= slider.maxValue * 0.25f)
         {
             slider.fillRect.GetComponent<Image>().color = Color.red;

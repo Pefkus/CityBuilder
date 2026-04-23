@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4500016372712727588
 RectTransform:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ RectTransform:
   m_Father: {fileID: 5693127526685344710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.006599903, y: -0.00010000169}
   m_SizeDelta: {x: -0.057, y: -0.0439}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -416,6 +416,7 @@ MonoBehaviour:
   ItemProdusing: {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
   PopUp: {fileID: 1876300791191131365, guid: 83db28035b1396c4a8af9cdbdd047cd3, type: 3}
   DestroyPS: {fileID: 1130369019923078984, guid: 379649b0d1758a0498ab5fc0afc8dd5e, type: 3}
+  ContainerForSlider: {fileID: 767519397619583507}
   slider: {fileID: 5734692357051961120}
 --- !u!1 &8088849276315516409
 GameObject:

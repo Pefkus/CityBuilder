@@ -11,13 +11,20 @@ public class SpawnableObject
 }
 public class MapGeneretor : MonoBehaviour
 {
+    public static MapGeneretor Instance;
     [Header("Ustawienia Spawnowania")]
+    public int Limit = 0;
+    public int LimitObjects = 0;
+     float timer= 0;
+     float BaseInterval = 10;
     public List<SpawnableObject> objectsToSpawn; 
     public List<GameObject> allMapTiles;
     public List <GameObject> mapList = new List<GameObject>();
     public GameObject Parent;
+    public float checkRadius = 0.2f;
     private void Awake()
     {
+        Instance = this;
         int RandomMap = Random.Range(0, mapList.Count);
         GameObject Map = Instantiate(mapList[RandomMap], Parent.transform.position, Quaternion.identity, Parent.transform);
         Map.transform.position = Parent.transform.position;
@@ -29,9 +36,15 @@ public class MapGeneretor : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        timer += Time.deltaTime;
+        if (timer >= BaseInterval)
         {
-            SpawnRandomItem();
+            if (Limit < LimitObjects)
+            {
+                SpawnRandomItem();
+                Limit++;
+                timer = 0;
+            }
         }
     }
 
@@ -55,7 +68,10 @@ public class MapGeneretor : MonoBehaviour
             // Sprawdzamy, czy warstwa kafelka (tile.layer) znajduje siê w masce (allowedSurface)
             if ((selectedItem.allowedSurface.value & (1 << tile.layer)) != 0)
             {
-                validTiles.Add(tile);
+                if (!IsTileOccupied(tile.transform.position))
+                {
+                    validTiles.Add(tile);
+                }
             }
         }
 
@@ -65,5 +81,19 @@ public class MapGeneretor : MonoBehaviour
             GameObject chosenTile = validTiles[Random.Range(0, validTiles.Count)];
             Instantiate(selectedItem.prefab, chosenTile.transform.position, Quaternion.identity, chosenTile.transform);
         }
+    }
+    private bool IsTileOccupied(Vector3 checkPosition)
+    {
+        // Wersja dla gier 2D
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(checkPosition, checkRadius);
+
+        foreach (Collider2D col in colliders)
+        {
+            if (col.CompareTag("Bulding") || col.CompareTag("Boosting Bulding"))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
