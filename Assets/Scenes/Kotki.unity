@@ -4250,6 +4250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f136fcf14f372498b68ed122f39a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulding
+  ClickTheSound: {fileID: 0}
   AdaptiveBoost: 0
   isProdusingBuilding: 1
   ProdusingItemName: {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
@@ -8081,6 +8082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f136fcf14f372498b68ed122f39a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulding
+  ClickTheSound: {fileID: 0}
   AdaptiveBoost: 0
   isProdusingBuilding: 1
   ProdusingItemName: {fileID: 3733046983109314388, guid: 1db00703b7e8d6f4ab2047e3dea29f4a, type: 3}
@@ -18834,6 +18836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f136fcf14f372498b68ed122f39a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bulding
+  ClickTheSound: {fileID: 0}
   AdaptiveBoost: 0
   isProdusingBuilding: 1
   ProdusingItemName: {fileID: 1680948049756902282, guid: f6c36d073fb06fe42b15094fceb0ae0c, type: 3}
@@ -21906,6 +21909,7 @@ MonoBehaviour:
   cellPosition: {x: 0, y: 0, z: 0}
   cursorMarkerSpriteRenderer: {fileID: 135096598}
   BoxCollider2D: {fileID: 1716072065}
+  audioSource: {fileID: 1716072067}
   myGrid: {fileID: 310158638}
   Speed: 1.5
   timer: 0
@@ -26163,7 +26167,7 @@ PrefabInstance:
       objectReference: {fileID: 1348338417}
     - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: objectsToSpawn.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: objectsToSpawn.Array.data[0].prefab
@@ -26176,15 +26180,23 @@ PrefabInstance:
     - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: objectsToSpawn.Array.data[2].prefab
       value: 
-      objectReference: {fileID: 6164748612352016119, guid: 71e436fcb50acfa4b93a88ffefed7f90, type: 3}
+      objectReference: {fileID: 6164748612352016119, guid: 889198f4235f2054d92dafa15d950ca2, type: 3}
     - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: objectsToSpawn.Array.data[3].prefab
       value: 
-      objectReference: {fileID: 6164748612352016119, guid: 889198f4235f2054d92dafa15d950ca2, type: 3}
+      objectReference: {fileID: 6164748612352016119, guid: ca86e24e095f11644978946e3b981821, type: 3}
     - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: objectsToSpawn.Array.data[4].prefab
       value: 
+      objectReference: {fileID: 6164748612352016119, guid: 71e436fcb50acfa4b93a88ffefed7f90, type: 3}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: objectsToSpawn.Array.data[5].prefab
+      value: 
       objectReference: {fileID: 6164748612352016119, guid: 889198f4235f2054d92dafa15d950ca2, type: 3}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: objectsToSpawn.Array.data[6].prefab
+      value: 
+      objectReference: {fileID: 6164748612352016119, guid: ca86e24e095f11644978946e3b981821, type: 3}
     - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: objectsToSpawn.Array.data[0].allowedSurface.m_Bits
       value: 8
@@ -26195,15 +26207,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: objectsToSpawn.Array.data[2].allowedSurface.m_Bits
-      value: 64
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: objectsToSpawn.Array.data[3].allowedSurface.m_Bits
-      value: 72
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: objectsToSpawn.Array.data[4].allowedSurface.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: objectsToSpawn.Array.data[5].allowedSurface.m_Bits
       value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108617869146039463, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
+      propertyPath: objectsToSpawn.Array.data[6].allowedSurface.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 4179620383684146366, guid: ae3fcd3b33d686b41b24200a9ff713da, type: 3}
       propertyPath: Tilemapy

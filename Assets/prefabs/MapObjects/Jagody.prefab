@@ -184,7 +184,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 3c5333e1928f5094d8c8738bb74f003e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52142421c53927248ac714497c6bc951, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 3774714470394484737}
   - component: {fileID: 2923821584681921423}
   m_Layer: 6
-  m_Name: "Ska\u0142a"
+  m_Name: Jagody
   m_TagString: Bulding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,12 +413,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   DurabilityAmount: 0
-  ItemProdusing: {fileID: 8830167879623921835, guid: 47d1af1918e055440a2aa459700c303c, type: 3}
+  ItemProdusing: {fileID: 1680948049756902282, guid: f6c36d073fb06fe42b15094fceb0ae0c, type: 3}
   PopUp: {fileID: 1876300791191131365, guid: 83db28035b1396c4a8af9cdbdd047cd3, type: 3}
   DestroyPS: {fileID: 1130369019923078984, guid: 379649b0d1758a0498ab5fc0afc8dd5e, type: 3}
   ContainerForSlider: {fileID: 767519397619583507}
   slider: {fileID: 5734692357051961120}
-  ClickTheSound: {fileID: 8300000, guid: 5d0ab660cf15f75439467a42990a4522, type: 3}
+  ClickTheSound: {fileID: 8300000, guid: ef2eac0f2d6cc1749a499d7a7691c38e, type: 3}
 --- !u!1 &8088849276315516409
 GameObject:
   m_ObjectHideFlags: 0

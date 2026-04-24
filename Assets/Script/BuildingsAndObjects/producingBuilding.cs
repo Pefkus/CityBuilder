@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class Bulding : MonoBehaviour
 {
+    [Header("Dzwiêki")]
+    public AudioClip ClickTheSound;
     public int AdaptiveBoost = 0;
     public bool isProdusingBuilding;
     public GameObject ProdusingItemName;

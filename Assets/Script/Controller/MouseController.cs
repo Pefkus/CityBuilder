@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 public class MouseController : MonoBehaviour
@@ -23,6 +24,7 @@ public class MouseController : MonoBehaviour
     public Vector3Int cellPosition;
     public GameObject cursorMarkerSpriteRenderer;
     public BoxCollider2D BoxCollider2D;
+    public AudioSource audioSource;
     public Grid myGrid;
     [Header("CLICK Settings")]
     public float Speed = 1.5f;
@@ -149,7 +151,11 @@ public class MouseController : MonoBehaviour
                                 if (Collision.gameObject.GetComponent<Bulding>() != null)
                                 {
                                     if (Collision.gameObject.GetComponent<Bulding>().isProdusingBuilding)
+                                    {
                                         Collision.gameObject.GetComponent<Bulding>().ProdusingItem(ClickBonus);
+                                        audioSource.PlayOneShot(Collision.GetComponent<Bulding>().ClickTheSound);
+                                    }
+                                       
                                 }
                                 else if(Collision.gameObject.GetComponent<MainBuilding>() != null)
                                 {
@@ -159,6 +165,7 @@ public class MouseController : MonoBehaviour
                                 else if(Collision.gameObject.GetComponent<ObcjectOnMap>() != null)
                                 {
                                     Collision.gameObject.GetComponent<ObcjectOnMap>().PunchingTheObject(ClickBonus);
+                                    audioSource.PlayOneShot(Collision.GetComponent<ObcjectOnMap>().ClickTheSound);
                                 }
                             }
                             Collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("Click");

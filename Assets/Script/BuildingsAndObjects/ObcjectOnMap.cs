@@ -11,6 +11,8 @@ public class ObcjectOnMap : MonoBehaviour
     public GameObject DestroyPS;
     public GameObject ContainerForSlider;
     public Slider slider;
+    [Header("Dzwiêki")]
+    public AudioClip ClickTheSound;
     void Start()
     {
         int lvl = TypesOfBuildingMenager.Instance.MainBuilding.GetComponent<MainBuilding>().LevelOfBuilding;

@@ -546,3 +546,4 @@ MonoBehaviour:
   DestroyPS: {fileID: 1130369019923078984, guid: 379649b0d1758a0498ab5fc0afc8dd5e, type: 3}
   ContainerForSlider: {fileID: 1167803956861149426}
   slider: {fileID: 3100912794824513553}
+  ClickTheSound: {fileID: 8300000, guid: 5d0ab660cf15f75439467a42990a4522, type: 3}

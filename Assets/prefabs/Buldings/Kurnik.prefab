@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f136fcf14f372498b68ed122f39a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  ClickTheSound: {fileID: 8300000, guid: f8fcb387666ce144abbadd08f2fac42b, type: 3}
   AdaptiveBoost: 0
   isProdusingBuilding: 1
   ProdusingItemName: {fileID: 3566080539008039699, guid: 311378c6429720e48a5aee73beb8eee4, type: 3}
