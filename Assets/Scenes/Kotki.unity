@@ -4055,7 +4055,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -7844,7 +7844,6 @@ GameObject:
   - component: {fileID: 634272966}
   - component: {fileID: 634272971}
   - component: {fileID: 634272972}
-  - component: {fileID: 634272974}
   - component: {fileID: 634272973}
   m_Layer: 5
   m_Name: Panel_Drewno
@@ -7872,7 +7871,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -8047,28 +8046,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KlikaczSurowca
   prefabCzasteczki: {fileID: 4648848239956862516, guid: 80be0ced74e64304a97d461cab244659, type: 3}
   miejsceNaCzasteczki: {fileID: 634272969}
---- !u!95 &634272974
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634272965}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 84a124321dba90044b2648ec215a93c9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &638911138
 GameObject:
   m_ObjectHideFlags: 0
@@ -18631,7 +18608,6 @@ GameObject:
   - component: {fileID: 1436663961}
   - component: {fileID: 1436663966}
   - component: {fileID: 1436663967}
-  - component: {fileID: 1436663969}
   - component: {fileID: 1436663968}
   m_Layer: 5
   m_Name: Panel_Jagody
@@ -18659,7 +18635,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -18834,28 +18810,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KlikaczSurowca
   prefabCzasteczki: {fileID: 4648848239956862516, guid: a613510dfc481d94493dc6417f69ca6c, type: 3}
   miejsceNaCzasteczki: {fileID: 1436663964}
---- !u!95 &1436663969
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436663960}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 685c2b3defb246b408f8bc6bb8b6ca65, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1437143105
 GameObject:
   m_ObjectHideFlags: 0

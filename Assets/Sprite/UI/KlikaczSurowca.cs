@@ -27,4 +27,8 @@ public class KlikaczSurowca : MonoBehaviour
             Instantiate(prefabCzasteczki, pozycjaMyszki, Quaternion.identity, miejsceNaCzasteczki);
         }
     }
+    private void OnMouseDown()
+    {
+        KliknietoSurowiec();
+    }
 }
