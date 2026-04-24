@@ -7,15 +7,17 @@ public class MouseController : MonoBehaviour
     public static MouseController Instance { get; private set; }
 
     Camera mainCamera;
+    [Header("Kolizje z obiektami")]
     public GameObject NpcCollision;
     public GameObject GrabedNpc;
     public GameObject Collision;
     public GameObject PlacingTheBuilding;
+    [Header("Efekty bool")]
     public bool CreatingBuilding = false;
     public bool GrabingTheNPC = false;
     private List<GameObject> buildingsInRange = new List<GameObject>();
     private List<GameObject> NPCInRange = new List<GameObject>();
-
+    
     public GameObject particlesystem;
     public Transform cursorMarker;
     public Vector3Int cellPosition;

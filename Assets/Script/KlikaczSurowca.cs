@@ -11,8 +11,6 @@ public class KlikaczSurowca : MonoBehaviour
     // Tę funkcję podepniemy pod guzik!
     public void KliknietoSurowiec()
     {
-        Debug.Log("Zebrałem surowiec!");
-
         // Sprawdzamy, czy podpieliśmy prefab
         if (prefabCzasteczki != null && miejsceNaCzasteczki != null)
         {
@@ -26,9 +24,5 @@ public class KlikaczSurowca : MonoBehaviour
             // 2. Tworzymy naszą jagodę (prefab) w miejscu myszki
             Instantiate(prefabCzasteczki, pozycjaMyszki, Quaternion.identity, miejsceNaCzasteczki);
         }
-    }
-    private void OnMouseDown()
-    {
-        KliknietoSurowiec();
     }
 }
