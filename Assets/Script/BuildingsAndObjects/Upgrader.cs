@@ -23,7 +23,7 @@ public class Upgrader : MonoBehaviour
         if (inventoryManager.GetValueOfItemInInventory(WhatItemNeed) >= Cost)
         {
             inventoryManager.ChangeValueOfItemInInventory(WhatItemNeed, -Cost);
-            Cost *= 2;
+            Cost = Mathf.RoundToInt(Cost * 1.5f);
             ChangeText(Cost);
             return true;
         }
