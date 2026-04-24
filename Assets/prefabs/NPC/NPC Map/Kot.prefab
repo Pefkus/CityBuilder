@@ -236,6 +236,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   FavoriteFood: {fileID: 0}
+  spriteRenderer: {fileID: 4188072781049986731}
+  sprites:
+  - {fileID: 7621529222681641902, guid: 7cbc065f38a6f94449172d2280f85d98, type: 3}
+  - {fileID: 5624861780432972358, guid: 94aa88a19e81f9b4a9c926090ef22f4e, type: 3}
+  - {fileID: -1685963457359292648, guid: 06e8c577c678bea43abc51c0c2d125a5, type: 3}
+  - {fileID: 7743741829983655373, guid: 17ca4f48d82641546b6f8d66269f4864, type: 3}
+  - {fileID: -2371374691598498533, guid: 131ce9dc770bb6a448145ab0b60b74d7, type: 3}
+  - {fileID: -3096693951963204761, guid: 0bf079485e648164190e69103dfb0a68, type: 3}
+  - {fileID: 1684533607839273373, guid: 4456b13d1ac77064b8373fb2669de440, type: 3}
+  - {fileID: -3234680291919774692, guid: b4de8f9b9f55b7f498f74ae45ffc8593, type: 3}
+  - {fileID: -1660957041631985387, guid: 1fd8e7796d6471442befa23db2b8e522, type: 3}
+  - {fileID: 4137301644860247844, guid: b9f040c284bfb544daaa5f22fdde5fe7, type: 3}
+  - {fileID: 2232655721043813805, guid: 733f0d917cc442843a4f45aa063ee5b3, type: 3}
+  - {fileID: 6399354903300734667, guid: 88935dca41ac3c14d97e56dc5c12d554, type: 3}
+  - {fileID: -1268367401258631807, guid: c72932ea68255b34ea4c60d9339b6169, type: 3}
   Building: {fileID: 0}
   HardWorking: 0
   speed: 1
@@ -266,4 +281,3 @@ MonoBehaviour:
     m_Bits: 16
   minWaitTime: 0
   maxWaitTime: 3
-  CanMove: 1

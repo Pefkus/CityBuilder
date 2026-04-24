@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
@@ -6,6 +7,8 @@ public class NPC : MonoBehaviour
     public GameObject FavoriteFood;
     private InventoryManager Inventory;
     private FoodController FoodController;
+    public SpriteRenderer spriteRenderer;
+    public List<Sprite> sprites = new List<Sprite>();
     [Header("Praca")]
     public GameObject Building;
     public bool HardWorking = false;
@@ -27,6 +30,8 @@ public class NPC : MonoBehaviour
         Inventory = InventoryManager.Instance;
         movment = GetComponent<MovmentNPC>();
         FoodController = FoodController.Instance;
+        int i = Random.Range(0, sprites.Count);
+        spriteRenderer.sprite = sprites[i];
     }
     void EatFavoriteFood()
     {
