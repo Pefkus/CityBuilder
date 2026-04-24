@@ -1,4 +1,6 @@
+using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UpgradeController : MonoBehaviour
 {
@@ -18,7 +20,7 @@ public class UpgradeController : MonoBehaviour
     float timerForBerries;
     public float BerriesSpeed;
     public int MoreCost = 0;
-    private void Start()
+    private void Awake()
     {
         Instance = this;
     }
@@ -56,5 +58,20 @@ public class UpgradeController : MonoBehaviour
         }
 
     }
-    
+    public void Rebirth()
+    {
+        SceneManager.LoadScene("Rebirth");
+    }
+    public void CreateNewNPC()
+    {
+        NPCController.Instance.CreateNewNpc();
+    }
+    public void MoreClicks()
+    {
+        UpgradeController.Instance.MouseController.ClickBonus += 1;
+    }
+    public void MouseSpeed()
+    {
+        UpgradeController.Instance.MouseController.Speed += 0.5f;
+    }
 }
