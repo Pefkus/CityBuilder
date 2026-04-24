@@ -170,8 +170,10 @@ MonoBehaviour:
   BuildingSize: 1
   MainBuilding: 0
   BuildingRadius: 0
-  BuildingsPrefabs: []
-  Description: 
+  BuildingsPrefabs: {fileID: 0}
+  LineRenderer: {fileID: 0}
+  Description: "G\u0142o\u015Bne s\u0105siadki znosz\u0105 pyszne jajka. Koty uwielbiaj\u0105
+    na nie patrze\u0107."
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +194,7 @@ MonoBehaviour:
   Cost: 5
   amoutOfItemProdusing: 1
   PopUp: {fileID: 1876300791191131365, guid: 83db28035b1396c4a8af9cdbdd047cd3, type: 3}
+  ItsUi: 0
 --- !u!61 &-7496202678886316444
 BoxCollider2D:
   m_ObjectHideFlags: 0

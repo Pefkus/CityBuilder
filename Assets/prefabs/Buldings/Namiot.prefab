@@ -171,7 +171,8 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: 
+  Description: "Koci kemping. Idealny na pocz\u0105tek, zanim zbudujesz prawdziwe
+    imperium."
 --- !u!61 &-7496202678886316444
 BoxCollider2D:
   m_ObjectHideFlags: 0

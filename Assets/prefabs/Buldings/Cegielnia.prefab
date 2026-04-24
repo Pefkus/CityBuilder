@@ -171,7 +171,8 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: 
+  Description: "Wypala najtwardsze ceg\u0142y. Gor\u0105co tu jak na kaloryferze
+    zim\u0105!"
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
   m_ObjectHideFlags: 0

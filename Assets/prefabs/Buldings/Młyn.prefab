@@ -173,7 +173,7 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: 
+  Description: "Skrzyd\u0142a kr\u0119c\u0105 si\u0119 na wietrze, miel\u0105c ziarno."
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
   m_ObjectHideFlags: 0
