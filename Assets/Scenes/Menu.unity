@@ -2065,8 +2065,8 @@ MonoBehaviour:
 
     IMPERIUM'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f5719a349386f414092a8538562ca4a1, type: 2}
-  m_sharedMaterial: {fileID: -5144785741474258198, guid: f5719a349386f414092a8538562ca4a1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: adb9443f2a2485d4da6d6cef32740949, type: 2}
+  m_sharedMaterial: {fileID: -5144785741474258198, guid: adb9443f2a2485d4da6d6cef32740949, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
