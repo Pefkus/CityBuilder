@@ -20,6 +20,7 @@ public class UpgradeController : MonoBehaviour
     float timerForBerries;
     public float BerriesSpeed;
     public int MoreCost = 0;
+    public GameObject ButtonRebirth;
     private void Awake()
     {
         Instance = this;
@@ -56,7 +57,10 @@ public class UpgradeController : MonoBehaviour
             }
             timerForBerries = 0f;
         }
-
+        if (TokensForRebirth >= 1)
+        {
+            ButtonRebirth.SetActive(true);
+        }
     }
     public void Rebirth()
     {
