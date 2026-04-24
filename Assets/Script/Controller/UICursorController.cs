@@ -10,10 +10,6 @@ public class UICursorController : MonoBehaviour
     [SerializeField] private Canvas canvas;
     private InventoryManager inventoryManager;
     private TypesOfBuildingMenager typesOfBuildingMenager;
-    [Header("Dzwiêki")]
-    public AudioClip ClickTheWoodSound;
-    public AudioClip ClickTheStoneSound;
-    public AudioClip ClickTheBerriesSound;
     [Header("UI Item Slots")]
     public GameObject ItemSlotContainer;
     public TextMeshProUGUI ItemQuantity;
@@ -25,6 +21,7 @@ public class UICursorController : MonoBehaviour
     public List<TextMeshProUGUI> RecourcesNeededQuantity = new List<TextMeshProUGUI>();
     public TextMeshProUGUI DescriptionOfBuilding;
     public MouseController mouseController;
+    public AudioSource audioSource;
     [Header("Collision")]
     private Collider2D collisionButton;
     public float timer;
@@ -66,6 +63,7 @@ public class UICursorController : MonoBehaviour
                 {
                     collisionButton.GetComponent<Bulding>().ProdusingItem(ClickBonus);
                     collisionButton.GetComponent<KlikaczSurowca>().KliknietoSurowiec();
+                    audioSource.PlayOneShot(collisionButton.GetComponent<KlikaczSurowca>().ClickTheSound);
                     timer = 0f;
                 }
             }

@@ -9,6 +9,8 @@ public class KlikaczSurowca : MonoBehaviour
     public Transform miejsceNaCzasteczki; // Tu przeciągnij swój Canvas (lub panel), żeby jagody się na nim rysowały
 
     // Tę funkcję podepniemy pod guzik!
+    [Header("Dzwięki")]
+    public AudioClip ClickTheSound;
     public void KliknietoSurowiec()
     {
         // Sprawdzamy, czy podpieliśmy prefab

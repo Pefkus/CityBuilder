@@ -1269,9 +1269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UICursorController
   canvas: {fileID: 481063808}
-  ClickTheWoodSound: {fileID: 0}
-  ClickTheStoneSound: {fileID: 0}
-  ClickTheBerriesSound: {fileID: 0}
   ItemSlotContainer: {fileID: 963940777}
   ItemQuantity: {fileID: 1830192563}
   ItemProducing: {fileID: 1044393687}
@@ -1291,6 +1288,7 @@ MonoBehaviour:
   - {fileID: 366259787}
   DescriptionOfBuilding: {fileID: 504671128}
   mouseController: {fileID: 1716072066}
+  audioSource: {fileID: 75346317}
   timer: 0
   ClickBonus: 0
 --- !u!50 &75346315
@@ -1379,7 +1377,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.363
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4320,6 +4318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KlikaczSurowca
   prefabCzasteczki: {fileID: 4648848239956862516, guid: bcd9166d7be5a38499c978fa6f4cc836, type: 3}
   miejsceNaCzasteczki: {fileID: 359771948}
+  ClickTheSound: {fileID: 8300000, guid: 5d0ab660cf15f75439467a42990a4522, type: 3}
 --- !u!1 &365878009
 GameObject:
   m_ObjectHideFlags: 0
@@ -8150,6 +8149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KlikaczSurowca
   prefabCzasteczki: {fileID: 4648848239956862516, guid: 80be0ced74e64304a97d461cab244659, type: 3}
   miejsceNaCzasteczki: {fileID: 634272969}
+  ClickTheSound: {fileID: 8300000, guid: b3b07aff6487a0e4d9af471830737d22, type: 3}
 --- !u!1 &638911138
 GameObject:
   m_ObjectHideFlags: 0
@@ -18902,6 +18902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KlikaczSurowca
   prefabCzasteczki: {fileID: 4648848239956862516, guid: a613510dfc481d94493dc6417f69ca6c, type: 3}
   miejsceNaCzasteczki: {fileID: 1436663964}
+  ClickTheSound: {fileID: 8300000, guid: ef2eac0f2d6cc1749a499d7a7691c38e, type: 3}
 --- !u!1 &1437143105
 GameObject:
   m_ObjectHideFlags: 0
