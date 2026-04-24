@@ -6,9 +6,13 @@ public class TypesOfBuildingMenager : MonoBehaviour
     public static TypesOfBuildingMenager Instance { get; private set; }
     public GameObject MainBuilding;
     public List<GameObject> TypesOfBuildings = new List<GameObject>();
-    void Start()
+    private void Awake()
     {
         Instance = this;
+    }
+    void Start()
+    {
+        
         GameObject[] BuildingsOnMap = GameObject.FindGameObjectsWithTag("Bulding");
         foreach (GameObject building in BuildingsOnMap)
         {
