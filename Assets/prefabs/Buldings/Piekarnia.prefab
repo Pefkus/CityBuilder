@@ -173,8 +173,8 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: "Zapach \u015Bwie\u017Cego chleba i kocimi\u0119tkowych bu\u0142eczek
-    przyci\u0105ga t\u0142umy"
+  Description: "Piekarnia-Zapach \u015Bwie\u017Cego chleba i kocimi\u0119tkowych
+    bu\u0142eczek przyci\u0105ga t\u0142umy"
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -170,7 +170,7 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: "Tu z drewna robi si\u0119 deski. I mn\xF3stwo pysznych wi\xF3r\xF3w
+  Description: "Tartak-Tu z drewna robi si\u0119 deski. I mn\xF3stwo pysznych wi\xF3r\xF3w
     do zabawy."
 --- !u!114 &-9024393335062933128
 MonoBehaviour:

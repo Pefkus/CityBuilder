@@ -173,7 +173,7 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: "Klasyczna strzecha. Przytulny k\u0105t dla pracuj\u0105cego mruczka."
+  Description: "Dom-Klasyczna strzecha. Przytulny k\u0105t dla pracuj\u0105cego mruczka."
 --- !u!61 &-7496202678886316444
 BoxCollider2D:
   m_ObjectHideFlags: 0

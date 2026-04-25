@@ -171,8 +171,8 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: "\u0179r\xF3d\u0142o twardego g\u0142azu. Kto\u015B musi to roz\u0142upywa\u0107,
-    \u017Ceby reszta imperium mog\u0142a spa\u0107 w pa\u0142acach."
+  Description: "Kamieniarz-\u0179r\xF3d\u0142o twardego g\u0142azu. Kto\u015B musi
+    to roz\u0142upywa\u0107, \u017Ceby reszta imperium mog\u0142a spa\u0107 w pa\u0142acach."
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
   m_ObjectHideFlags: 0

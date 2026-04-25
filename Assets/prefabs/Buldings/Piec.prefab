@@ -172,7 +172,7 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: "Ciep\u0142e miejsce do spania... i wypalania drewna"
+  Description: "Piec-Ciep\u0142e miejsce do spania... i wypalania drewna"
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -172,7 +172,8 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: "Zbieramy si\u0119 tu wieczorami, \u017Ceby podsma\u017Cy\u0107 rybk\u0119."
+  Description: "Ognisko-Zbieramy si\u0119 tu wieczorami, \u017Ceby podsma\u017Cy\u0107
+    rybk\u0119."
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f136fcf14f372498b68ed122f39a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  ClickTheSound: {fileID: 0}
   AdaptiveBoost: 0
   isProdusingBuilding: 1
   ProdusingItemName: {fileID: 8964461917096180653, guid: 54ce113bb85d9134a8946da274e8e21f, type: 3}

@@ -172,8 +172,8 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: "G\u0142o\u015Bne s\u0105siadki znosz\u0105 pyszne jajka. Koty uwielbiaj\u0105
-    na nie patrze\u0107."
+  Description: "Kurnik-G\u0142o\u015Bne s\u0105siadki znosz\u0105 pyszne jajka. Koty
+    uwielbiaj\u0105 na nie patrze\u0107."
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
   m_ObjectHideFlags: 0

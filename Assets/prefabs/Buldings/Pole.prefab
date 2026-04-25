@@ -171,8 +171,8 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 6164748612352016119, guid: e710b6a0b0d64fc48bb1adaf8c05f571, type: 3}
   LineRenderer: {fileID: 0}
-  Description: "Z\u0142ote k\u0142osy faluj\u0105 na wietrze, nale\u017C\u0105 do
-    farmy.."
+  Description: "Pole-Z\u0142ote k\u0142osy faluj\u0105 na wietrze, nale\u017C\u0105
+    do farmy.."
 --- !u!61 &-7496202678886316444
 BoxCollider2D:
   m_ObjectHideFlags: 0

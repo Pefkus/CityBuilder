@@ -172,8 +172,8 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: "Dla kot\xF3w z wy\u017Cszych sfer. W\u0142asna miska, w\u0142asne
-    \u0142\xF3\u017Cko, pe\u0142en luksus."
+  Description: "Du\u017Cy Dom-Dla kot\xF3w z wy\u017Cszych sfer. W\u0142asna miska,
+    w\u0142asne \u0142\xF3\u017Cko, pe\u0142en luksus."
 --- !u!61 &-7496202678886316444
 BoxCollider2D:
   m_ObjectHideFlags: 0

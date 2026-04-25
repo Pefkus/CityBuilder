@@ -172,8 +172,8 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: "Zawsze pachnie tu \u015Bwie\u017C\u0105 rybk\u0105. Najbardziej po\u017C\u0105dany
-    adres w mie\u015Bcie!"
+  Description: "Chata Rybaka-Zawsze pachnie tu \u015Bwie\u017C\u0105 rybk\u0105.
+    Najbardziej po\u017C\u0105dany adres w mie\u015Bcie!"
 --- !u!114 &-9024393335062933128
 MonoBehaviour:
   m_ObjectHideFlags: 0

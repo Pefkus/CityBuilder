@@ -170,7 +170,7 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: "Najwspanialsze schronienie znane kociej rasie. Kto by chcia\u0142
+  Description: "Karton-Najwspanialsze schronienie znane kociej rasie. Kto by chcia\u0142
     zamek, maj\u0105c TO? Zwi\u0119ksza szybko\u015B\u0107 pracy."
 --- !u!61 &-7496202678886316444
 BoxCollider2D:

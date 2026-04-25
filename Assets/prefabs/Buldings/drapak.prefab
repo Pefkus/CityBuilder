@@ -170,7 +170,7 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: "Monumentalna wie\u017Ca rozkoszy. Zwieksza pr\u0119dko\u015B\u0107
+  Description: "Drapak-Monumentalna wie\u017Ca rozkoszy. Zwieksza pr\u0119dko\u015B\u0107
     pracy."
 --- !u!61 &-7496202678886316444
 BoxCollider2D:

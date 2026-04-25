@@ -171,8 +171,8 @@ MonoBehaviour:
   BuildingRadius: 0
   BuildingsPrefabs: {fileID: 0}
   LineRenderer: {fileID: 0}
-  Description: "\u015Awi\u0119te \u017Ar\xF3d\u0142o kociej energii. Zwi\u0119ksza
-    zapa\u0142 do pracy!"
+  Description: "KociMi\u0119tka-\u015Awi\u0119te \u017Ar\xF3d\u0142o kociej energii.
+    Zwi\u0119ksza zapa\u0142 do pracy!"
 --- !u!61 &-7496202678886316444
 BoxCollider2D:
   m_ObjectHideFlags: 0
